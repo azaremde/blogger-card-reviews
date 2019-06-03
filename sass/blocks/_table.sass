@@ -1,0 +1,129 @@
+.full-table
+    .rectangle-block-wrapper
+        margin-top: 30px
+        .rectangle-block
+            padding: 0 0 50px 0
+            .upper-part
+                display: flex
+                justify-content: space-between
+                padding: 20px
+                .left-part
+                    display: flex
+                    align-items: center
+                    &__title
+                    &__button
+                        width: 97px
+                        margin-left: 10px
+                    .custom-search-field
+                        margin-left: 47px
+                        &__field
+                        &__button
+                .right-part
+                    display: flex
+                    align-items: center
+                    .gray-text
+                        font-size: 14px
+                    .select-wrapper
+                        width: 58px
+                        margin-left: 10px
+            .table
+                *
+                    font-size: 14px
+                    line-height: 17px
+                border-collapse: collapse
+                width: 100%
+                .tr
+                    &:nth-child(2n)
+                        background-color: #F8F8F8
+                    .th, .td
+                        padding: 4px 15px
+                        border: 1px solid $after-color-2
+                        text-align: left
+                        &:first-child
+                            max-width: 19px
+                            padding: 5px
+                            border-left: none
+                        &:last-child
+                            border-right: none
+                            width: 96px
+                        &:nth-last-child(2)
+                            width: 130px
+                        &:nth-last-child(3)
+                            width: 128px
+                        &:nth-last-child(4)
+                            width: 110px
+                        &:nth-last-child(5)
+                            width: 82px
+                            text-align: center
+                        &:nth-last-child(6)
+                            width: 91px
+                        &:nth-last-child(7)
+                            width: 83px
+                        &:nth-last-child(8)
+                            width: 114px
+                        &:nth-last-child(9)
+                            width: 104px
+                        &:nth-last-child(10), &:nth-last-child(11)
+                            width: 151px
+                        &:nth-last-child(11)
+                            width: 92px
+                    &.show-more
+                        .td
+                            text-align: center
+                            background-color: #fff
+                            padding: 20px
+                            color: $secondary-text
+
+                            
+            .pages
+                padding-top: 30px
+                &__prev, &__next
+                    border-radius: 5px
+                    padding: 0 25px
+                    color: $after-color-1
+                    border: 1px solid #E4EFF4
+                &:hover
+                    color: $secondary-text
+                    border-color: $after-color-2
+                .buttons
+                    margin: 0 10px
+                    display: flex
+                    height: 36px
+                    overflow: hidden
+                    &__page
+                        border: 1px solid #E4EFF4
+                        border-right: none
+                        width: 36px
+                        height: 36px
+                        text-align: center
+                        position: relative
+                        .buttons-text
+                            color: $secondary-text
+                            position: absolute
+                            top: 50%
+                            left: 50%
+                            transform: translate(-50%, -50%)
+                        &--current
+                            background-color: #3897F0
+                            border: 1px solid #3897F0
+                            .buttons-text
+                                color: white
+                        &:first-child
+                            border-top-left-radius: 5px
+                            border-bottom-left-radius: 5px
+                        &:last-child
+                            border-right: 1px solid #E4EFF4
+                            border-top-right-radius: 5px
+                            border-bottom-right-radius: 5px
+                button
+                    height: 36px
+                    background-color: #fff
+                    outline: none
+                    transition: 0.3s
+                    cursor: pointer
+                    box-shadow: none
+                .pages-wrapper
+                    display: flex
+                    justify-content: space-between
+                    width: 380px
+                    margin: auto

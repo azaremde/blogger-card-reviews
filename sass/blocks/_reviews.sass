@@ -1,0 +1,42 @@
+.reviews
+    .rectangle-block-wrapper
+        display: flex
+        justify-content: space-between
+        .rectangle-block
+            display: flex
+            justify-content: space-between
+            &:first-child
+                width: 77.2%
+                padding-bottom: 30px
+                padding-top: 20px
+                .column
+                    &:nth-child(1), &:nth-child(2), &:nth-child(3)
+                        width: 210px
+                    &:last-child
+                        width: 225px
+            &:last-child
+                width: 20.5%
+                padding-bottom: 26px
+                padding-top: 18px
+                .column
+                    width: 100%
+            .column
+                display: flex
+                flex-direction: column
+                align-items: center
+                justify-content: space-between
+                .row
+                    display: flex
+                    justify-content: space-between
+                    flex-wrap: wrap
+                    width: 100%
+                    &:first-child
+                        margin-bottom: 16px
+                    &__title
+                        width: 100%
+                        display: block
+                        margin-bottom: 8px
+                    &__input[type=number]
+                        width: calc(50% - 5px)
+                    &__input[type=text]
+                        width: 100%

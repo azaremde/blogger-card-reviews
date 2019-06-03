@@ -439,6 +439,11 @@ body {
   margin: auto;
 }
 
+.container--other {
+  width: 1352px;
+  margin: auto;
+}
+
 .main {
   margin-top: 105px;
 }
@@ -548,8 +553,11 @@ select {
   color: #2C77BD;
 }
 
+.fa-star {
+  color: #FBC400;
+}
+
 .button {
-  width: 170px;
   height: 36px;
   font-size: 14px;
   border-radius: 5px;
@@ -569,8 +577,13 @@ select {
 
 .button--white {
   background-color: #fff;
+  border: 1px solid #D5DFE4;
   color: #192229;
-  width: 219px;
+}
+
+.button--yellow {
+  background-color: #F9D451;
+  color: #192229;
 }
 
 .input {
@@ -672,6 +685,7 @@ select {
 }
 
 .dropdown {
+  width: 100%;
   cursor: pointer;
   -webkit-touch-callout: none;
   -webkit-user-select: none;
@@ -758,11 +772,126 @@ select {
   z-index: 999;
 }
 
-.dropdown-wrapper {
+.custom-search-field {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  overflow: hidden;
+  height: 36px;
+  width: 242px;
+}
+
+.custom-search-field__field {
+  border: 1px solid #D5DFE4;
+  border-radius: 5px 0 0 5px;
+  border-right: none;
+  width: calc(100% - 36px);
+  padding-left: 10px;
+  outline: none;
+  color: #192229;
+}
+
+.custom-search-field__field::-webkit-input-placeholder {
+  font-size: 14px;
+  color: #D5DFE4;
+}
+
+.custom-search-field__field:-ms-input-placeholder {
+  font-size: 14px;
+  color: #D5DFE4;
+}
+
+.custom-search-field__field::-ms-input-placeholder {
+  font-size: 14px;
+  color: #D5DFE4;
+}
+
+.custom-search-field__field::placeholder {
+  font-size: 14px;
+  color: #D5DFE4;
+}
+
+.custom-search-field__button {
+  border-radius: 0px 5px 5px 0px;
+  width: 36px;
+  height: 36px;
+  -webkit-box-shadow: none;
+          box-shadow: none;
+  position: relative;
+  border: 1px solid #D5DFE4;
+  background-color: transparent;
+  color: #192229;
+}
+
+.custom-search-field__button i {
+  position: absolute;
+  -webkit-transform: translateX(-50%) translateY(-50%);
+          transform: translateX(-50%) translateY(-50%);
+  color: #6A7B83;
+}
+
+.rate-row {
+  position: relative;
+  width: 100%;
+  max-height: 36px;
+}
+
+.rate-row * {
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  -o-user-select: none;
+  user-select: none;
+}
+
+.rate-row .level {
+  width: 18px;
+  height: 18px;
+  background-color: #fff;
+  border-radius: 50%;
+  position: absolute;
+  z-index: 2;
+  top: -8px;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+  -webkit-box-shadow: 0px 2px 7px rgba(0, 0, 0, 0.15);
+          box-shadow: 0px 2px 7px rgba(0, 0, 0, 0.15);
+}
+
+.rate-row .stripe {
+  display: block;
+  position: absolute;
+  width: 100%;
+  height: 1px;
+  top: 9px;
+  z-index: 1;
+  background-color: #D5DFE4;
+}
+
+.rate-row .numbers {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  margin: auto;
+  margin-top: 3px;
+  width: calc(100% - 7px);
+}
+
+.select-wrapper {
   position: relative;
 }
 
-.dropdown-wrapper::after {
+.select-wrapper .select {
+  width: 100%;
+}
+
+.select-wrapper::after {
   content: '';
   border: 5px solid transparent;
   border-top: 5px solid #B4BDC1;
@@ -775,7 +904,7 @@ select {
   transition: 0.2s;
 }
 
-.dropdown-wrapper--active::after {
+.select-wrapper--active::after {
   -webkit-transform: rotateZ(180deg);
           transform: rotateZ(180deg);
 }
@@ -784,11 +913,11 @@ select {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
   cursor: pointer;
-  margin-top: 5px;
+  margin-bottom: 5px;
 }
 
 .option:hover::before {
@@ -841,8 +970,6 @@ select {
   position: absolute;
   background-color: transparent;
   border: 1px solid #6A7B83;
-  left: 1px;
-  top: -2px;
   border-radius: 3px;
   -webkit-transition: 0.3s;
   transition: 0.3s;
@@ -850,8 +977,7 @@ select {
 
 .option__title {
   font-size: 14px;
-  margin-top: 1px;
-  margin-left: 8px;
+  margin-left: 15px;
   line-height: 17px;
 }
 
@@ -867,6 +993,12 @@ strong {
   font-family: 'Rubik', sans-serif;
   font-weight: 400;
   font-weight: 500;
+}
+
+@media (max-width: 1352px) {
+  .container--other {
+    width: 100%;
+  }
 }
 
 @media (max-width: 1110px) {

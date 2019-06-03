@@ -11,10 +11,255 @@
 
     <script src="js/jquery-3.4.1.js"></script>
     <script src="js/index.js"></script>
+    <script src="https://kit.fontawesome.com/340562d742.js"></script>
 </head>
 <body>
     <header class="header" id="header"><div class="container" id="to-include"></div></header>
 
-    
+    <div class="main">
+        <div class="container--other">
+            <section class="reviews section">
+                <div class="heading-row heading-row--horizontal">
+                    <h2 class="general-info__title section__title">Отзывы</h2>
+                </div>
+                <div class="rectangle-block-wrapper">
+                    <div class="rectangle-block">
+                        <div class="column">
+                            <div class="row">
+                                <h3 class="row__title">Кто рекламировал</h3>
+                                <input type="text" placeholder="Начните вводить ник" class="row__input input">
+                            </div>
+                            <div class="row">
+                                <h3 class="row__title">Формат рекламы</h3>
+                                <div class="dropdown" id="dropdown">
+                                    <div class="dropdown__body" id="dropdown__body">
+                                        <span class="dropdown__text">Выберите из списка</span>
+                                    </div>
+                                    <div class="list" id="dropdown__list">
+                                        <div class="option dropdown-option">
+                                            <div class="option__select"></div>
+                                            <h6 class="option__title">Бьюти</h6>
+                                        </div>
+                                        <div class="option dropdown-option">
+                                            <div class="option__select"></div>
+                                            <h6 class="option__title">Жизнь заграницей</h6>
+                                        </div>
+                                        <div class="option dropdown-option">
+                                            <div class="option__select"></div>
+                                            <h6 class="option__title">Здоровье</h6>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="column">
+                            <div class="row">
+                                <h3 class="row__title">Цена за рекламу в ₽</h3>
+                                <input type="number" placeholder="от 450" class="row__input input">
+                                <input type="number" placeholder="до 888 800" class="row__input input">
+                            </div>
+                            <div class="row">
+                                <h3 class="row__title">Цена за подписчика в ₽</h3>
+                                <input type="number" placeholder="от 1" class="row__input input">
+                                <input type="number" placeholder="до 400"  class="row__input input">
+                            </div>
+                        </div>
+                        <div class="column">
+                            <div class="row">
+                                <h3 class="row__title">Приход подписчиков</h3>
+                                <input type="number" placeholder="от 20" class="row__input input">
+                                <input type="number" placeholder="до 56 000"  class="row__input input">
+                            </div>
+                            <div class="row">
+                                <h3 class="row__title">Оценка <i class="fas fa-star"></i> <span id="rating"></span></h3>
+                                <div class="rate-row">
+                                    <div class="stripe"></div>
+                                    <input type="range" id="level" min="1" value="0" max="10">
+                                    <div class="numbers">
+                                        <span class="subtitle gray-text">1</span>
+                                        <span class="subtitle gray-text">10</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="column">
+                            <div class="row">
+                                <h3 class="row__title"> </h3>
+                                <div class="option">
+                                    <div class="option__select"></div>
+                                    <h6 class="option__title">Показать только доступных для заказа на сайте блогеров</h6>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <button class="row__button button button--white">Сбросить</button>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- /.rectangle-block -->
+                    <div class="rectangle-block">
+                        <div class="column leave-review">
+                            <img src="img/godfather_image.png" alt="" class="leave-review__image">
+                            <button class="leave-review__button button button--yellow">Оставить отзыв на блогера</button>    
+                        </div>
+                    </div>
+                    <!-- /.rectangle-block -->
+                </div>
+                <!-- /.rectangle-block-wrapper -->
+            </section>
+            <!-- /.reviews section -->
+            <section class="full-table section">
+                <div class="rectangle-block-wrapper">
+                    <div class="rectangle-block">
+                        <div class="upper-part">
+                            <div class="left-part">
+                                <h2 class="left-part__title">Показана таблица для</h2>
+                                <button class="left-part__button button button--white">Блогеров</button>
+                                <button class="left-part__button button">Коммерции</button>
+                                <div class="custom-search-field">
+                                    <input class="custom-search-field__field input" placeholder="Название товара/услуги" type="text">
+                                    <button class="custom-search-field__button button input-button"><i class="fas fa-search"></i></button>
+                                </div>
+                            </div>
+                            <div class="right-part">
+                                <span class="gray-text">Показывать по</span>
+                                <div class="select-wrapper">
+                                    <select class="select">
+                                        <option value="25">25</option>
+                                        <option value="50">50</option>
+                                        <option value="75">75</option>
+                                        <option value="100">100</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                        <table class="table">
+                            <tr class="tr table-title">
+                                <th class="th table-title__item"></th>
+                                <th class="th table-title__item"><strong>Дата рекламы</strong></th>
+                                <th class="th table-title__item"><strong>Аккаунт заказчика</strong></th>
+                                <th class="th table-title__item"><strong>Кто рекламировал</strong></th>
+                                <th class="th table-title__item"><strong>Реклама окупилась</strong></th>
+                                <th class="th table-title__item"><strong>Цена за подписчика</strong></th>
+                                <th class="th table-title__item"><strong>Приход</strong></th>
+                                <th class="th table-title__item"><strong>Цена за рекламу</strong></th>
+                                <th class="th table-title__item"><strong>Оценка</strong></th>
+                                <th class="th table-title__item"><strong>Формат рекламы</strong></th>
+                                <th class="th table-title__item"><strong>Товар или услуга</strong></th>
+                                <th class="th table-title__item"><strong>Текст отзыва</strong></th>
+                                <th class="th table-title__item"></th>
+                            </tr>
+                            <tr class="tr table-blogger">
+                                <td class="td table-blogger__item">+</td>
+                                <td class="td table-blogger__item">18.05.19</td>
+                                <td class="td table-blogger__item"><a class="table-blogger__client link" href="#">neotpuskaiteplo</a></td>
+                                <td class="td table-blogger__item"><a class="table-blogger__executor link" href="#">egordemkin_chef</a></td>
+                                <td class="td table-blogger__item">Да</td>
+                                <td class="td table-blogger__item">3,3 ₽</td>
+                                <td class="td table-blogger__item">400</td>
+                                <td class="td table-blogger__item">300 ₽</td>
+                                <td class="td table-blogger__item">8 <i class="fas fa-star"></i></td>
+                                <td class="td table-blogger__item">Сторис</td>
+                                <td class="td table-blogger__item">Одежда</td>
+                                <td class="td table-blogger__item"><a class="table-blogger__text link" href="#">Открыть отзыв</a></td>
+                                <td class="td table-blogger__item"><a class="table-blogger__blogger link" href="#">К блогеру</a></td>
+                            </tr>
+                            <tr class="tr table-blogger">
+                                <td class="td table-blogger__item">+</td>
+                                <td class="td table-blogger__item">18.05.19</td>
+                                <td class="td table-blogger__item"><a class="table-blogger__client link" href="#">kreida</a></td>
+                                <td class="td table-blogger__item"><a class="table-blogger__executor link" href="#">anastasi_li</a></td>
+                                <td class="td table-blogger__item">Да</td>
+                                <td class="td table-blogger__item">10,5 ₽</td>
+                                <td class="td table-blogger__item">1 500</td>
+                                <td class="td table-blogger__item">1 200 ₽</td>
+                                <td class="td table-blogger__item">7 <i class="fas fa-star"></i></td>
+                                <td class="td table-blogger__item">Фото-пост</td>
+                                <td class="td table-blogger__item">Нижнее бельё</td>
+                                <td class="td table-blogger__item"><a class="table-blogger__text link" href="#"></a></td>
+                                <td class="td table-blogger__item">Нет на сайте</td>
+                            </tr>
+                            <tr class="tr table-blogger">
+                                <td class="td table-blogger__item">+</td>
+                                <td class="td table-blogger__item">18.05.19</td>
+                                <td class="td table-blogger__item"><a class="table-blogger__client link" href="#">neotpuskaiteplo</a></td>
+                                <td class="td table-blogger__item"><a class="table-blogger__executor link" href="#">egordemkin_chef</a></td>
+                                <td class="td table-blogger__item">Да</td>
+                                <td class="td table-blogger__item">3,3 ₽</td>
+                                <td class="td table-blogger__item">400</td>
+                                <td class="td table-blogger__item">300 ₽</td>
+                                <td class="td table-blogger__item">8 <i class="fas fa-star"></i></td>
+                                <td class="td table-blogger__item">Сторис</td>
+                                <td class="td table-blogger__item">Одежда</td>
+                                <td class="td table-blogger__item"><a class="table-blogger__text link" href="#">Открыть отзыв</a></td>
+                                <td class="td table-blogger__item"><a class="table-blogger__blogger link" href="#">К блогеру</a></td>
+                            </tr>
+                            <tr class="tr table-blogger">
+                                <td class="td table-blogger__item">+</td>
+                                <td class="td table-blogger__item">18.05.19</td>
+                                <td class="td table-blogger__item"><a class="table-blogger__client link" href="#">kreida</a></td>
+                                <td class="td table-blogger__item"><a class="table-blogger__executor link" href="#">anastasi_li</a></td>
+                                <td class="td table-blogger__item">Да</td>
+                                <td class="td table-blogger__item">10,5 ₽</td>
+                                <td class="td table-blogger__item">1 500</td>
+                                <td class="td table-blogger__item">1 200 ₽</td>
+                                <td class="td table-blogger__item">7 <i class="fas fa-star"></i></td>
+                                <td class="td table-blogger__item">Фото-пост</td>
+                                <td class="td table-blogger__item">Нижнее бельё</td>
+                                <td class="td table-blogger__item"><a class="table-blogger__text link" href="#"></a></td>
+                                <td class="td table-blogger__item">Нет на сайте</td>
+                            </tr>
+                            <tr class="tr table-blogger">
+                                <td class="td table-blogger__item">+</td>
+                                <td class="td table-blogger__item">18.05.19</td>
+                                <td class="td table-blogger__item"><a class="table-blogger__client link" href="#">neotpuskaiteplo</a></td>
+                                <td class="td table-blogger__item"><a class="table-blogger__executor link" href="#">egordemkin_chef</a></td>
+                                <td class="td table-blogger__item">Да</td>
+                                <td class="td table-blogger__item">3,3 ₽</td>
+                                <td class="td table-blogger__item">400</td>
+                                <td class="td table-blogger__item">300 ₽</td>
+                                <td class="td table-blogger__item">8 <i class="fas fa-star"></i></td>
+                                <td class="td table-blogger__item">Сторис</td>
+                                <td class="td table-blogger__item">Одежда</td>
+                                <td class="td table-blogger__item"><a class="table-blogger__text link" href="#">Открыть отзыв</a></td>
+                                <td class="td table-blogger__item"><a class="table-blogger__blogger link" href="#">К блогеру</a></td>
+                            </tr>
+                            <tr class="tr table-blogger">
+                                <td class="td table-blogger__item">+</td>
+                                <td class="td table-blogger__item">18.05.19</td>
+                                <td class="td table-blogger__item"><a class="table-blogger__client link" href="#">kreida</a></td>
+                                <td class="td table-blogger__item"><a class="table-blogger__executor link" href="#">anastasi_li</a></td>
+                                <td class="td table-blogger__item">Да</td>
+                                <td class="td table-blogger__item">10,5 ₽</td>
+                                <td class="td table-blogger__item">1 500</td>
+                                <td class="td table-blogger__item">1 200 ₽</td>
+                                <td class="td table-blogger__item">7 <i class="fas fa-star"></i></td>
+                                <td class="td table-blogger__item">Фото-пост</td>
+                                <td class="td table-blogger__item">Нижнее бельё</td>
+                                <td class="td table-blogger__item"><a class="table-blogger__text link" href="#"></a></td>
+                                <td class="td table-blogger__item">Нет на сайте</td>
+                            </tr>
+                            <tr class="tr show-more">
+                                <td class="td" colspan="13">Показать еще</td>
+                            </tr>
+                        </table>
+                        <div class="pages">
+                            <div class="pages-wrapper">
+                                <button class="pages__prev button only-desktop only-desktop--inline">Назад</button>
+                                <button class="pages__prev button only-mobile only-mobile--inline"></button>
+                            <div class="buttons">
+                                <button class="buttons__page buttons__page--current"><span class="buttons-text">1</span></button>
+                                <button class="buttons__page"><span class="buttons-text">2</span></button>
+                                <button class="buttons__page"><span class="buttons-text">3</span></button>
+                                <button class="buttons__page"><span class="buttons-text">4</span></button>
+                            </div>
+                                <button class="pages__next button only-desktop only-desktop--inline">Вперед</button>
+                                <button class="pages__next button only-mobile only-mobile--inline"></button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </div>
 </body>
 </html>

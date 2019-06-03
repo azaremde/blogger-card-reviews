@@ -17,6 +17,10 @@ body
     width: 1110px
     margin: auto
 
+.container--other
+    width: 1352px
+    margin: auto
+
 .main
     margin-top: 105px
 
@@ -88,8 +92,10 @@ select
     &:hover
         color: $indicator-color--hovered
 
+.fa-star
+    color: #FBC400
+
 .button
-    width: 170px
     height: 36px
     font-size: 14px
     border-radius: 5px
@@ -106,8 +112,11 @@ select
     overflow: hidden
     &--white
         background-color: #fff
+        border: 1px solid $after-color-2
         color: $primary-text
-        width: 219px
+    &--yellow
+        background-color: $yellow-button
+        color: $primary-text
 
 .input
     padding: 10px
@@ -172,6 +181,7 @@ select
         font-size: 24px
 
 .dropdown
+    width: 100%
     cursor: pointer
     -webkit-touch-callout: none
     -webkit-user-select: none
@@ -234,8 +244,78 @@ select
         border: 1px solid $primary-text
         z-index: 999
 
-.dropdown-wrapper
+.custom-search-field
+    display: flex
+    justify-content: flex-start
+    overflow: hidden
+    height: 36px
+    width: 242px
+    &__field
+        border: 1px solid $after-color-2
+        border-radius: 5px 0 0 5px
+        border-right: none
+        width: calc(100% - 36px)
+        padding-left: 10px
+        outline: none
+        color: $primary-text
+        &::placeholder
+            font-size: 14px
+            color: $after-color-2
+    &__button
+        border-radius: 0px 5px 5px 0px
+        width: 36px
+        height: 36px
+        box-shadow: none
+        position: relative
+        border: 1px solid $after-color-2
+        background-color: transparent
+        color: $primary-text
+        i
+            position: absolute
+            transform: translateX(-50%) translateY(-50%)
+            color: $secondary-text
+
+
+        
+.rate-row
     position: relative
+    width: 100%
+    max-height: 36px
+    *
+        -webkit-user-select: none
+        -moz-user-select: none
+        -ms-user-select: none
+        -o-user-select: none
+        user-select: none
+    .level
+        width: 18px
+        height: 18px
+        background-color: #fff
+        border-radius: 50%
+        position: absolute
+        z-index: 2
+        top: -8px
+        transform: translateX(-50%)
+        box-shadow: 0px 2px 7px rgba(0, 0, 0, 0.15)
+    .stripe
+        display: block
+        position: absolute
+        width: 100%
+        height: 1px
+        top: 9px
+        z-index: 1
+        background-color: $after-color-2
+    .numbers
+        display: flex
+        justify-content: space-between
+        margin: auto
+        margin-top: 3px
+        width: calc(100% - 7px)
+
+.select-wrapper
+    position: relative
+    .select
+        width: 100%
     &::after
         content: ''
         border: 5px solid transparent
@@ -251,9 +331,9 @@ select
 
 .option
     display: flex
-    align-items: center
+    align-items: flex-start
     cursor: pointer
-    margin-top: 5px
+    margin-bottom: 5px
     &:hover
         .option__select
         &::before
@@ -294,14 +374,11 @@ select
             position: absolute
             background-color: transparent
             border: 1px solid $secondary-text
-            left: 1px
-            top: -2px
             border-radius: 3px
             transition: 0.3s
     &__title
         font-size: 14px
-        margin-top: 1px
-        margin-left: 8px
+        margin-left: 15px
         line-height: 17px
 
 .currently-hidden
@@ -313,6 +390,10 @@ select
 strong
     +regular
     font-weight: 500
+
+@media (max-width: 1352px)
+    .container--other
+        width: 100%
 
 @media (max-width: 1110px)
     .container
