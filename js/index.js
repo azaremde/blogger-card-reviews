@@ -16,6 +16,14 @@ HeaderLoad = () => {
     xhr.send();    
 }
 
+DotPluginLoad = () => {
+    tdCons = $('.td-con');
+    $.map(tdCons, (element) => {
+        new Dotdotdot(element, {});
+    });
+}
+
 $(document).ready(() => {
     HeaderLoad();
+    DotPlugin();
 });

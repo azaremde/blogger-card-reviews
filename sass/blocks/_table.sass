@@ -28,18 +28,24 @@
                         width: 58px
                         margin-left: 10px
             .table
+                border-collapse: collapse
+                width: 100%
                 *
                     font-size: 14px
                     line-height: 17px
-                border-collapse: collapse
-                width: 100%
                 .tr
+                    height: 44px
                     &:nth-child(2n)
                         background-color: #F8F8F8
                     .th, .td
                         padding: 4px 15px
                         border: 1px solid $after-color-2
                         text-align: left
+                        overflow: hidden
+                        .td-con
+                            height: 44px
+                            display: flex
+                            align-items: center
                         &:first-child
                             max-width: 19px
                             padding: 5px
@@ -73,9 +79,7 @@
                             text-align: center
                             background-color: #fff
                             padding: 20px
-                            color: $secondary-text
-
-                            
+                            color: $secondary-text                            
             .pages
                 padding-top: 30px
                 &__prev, &__next
