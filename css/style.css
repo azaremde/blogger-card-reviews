@@ -1200,10 +1200,11 @@ strong {
 
 .full-table .rectangle-block-wrapper {
   margin-top: 30px;
+  margin-bottom: 66px;
 }
 
 .full-table .rectangle-block-wrapper .rectangle-block {
-  padding: 0 0 50px 0;
+  padding: 0 0 40px 0;
 }
 
 .full-table .rectangle-block-wrapper .rectangle-block .upper-part {
