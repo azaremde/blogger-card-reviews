@@ -25,5 +25,5 @@ DotPluginLoad = () => {
 
 $(document).ready(() => {
     HeaderLoad();
-    DotPlugin();
+    DotPluginLoad();
 });
