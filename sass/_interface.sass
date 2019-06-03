@@ -1,0 +1,391 @@
+*
+    box-sizing: border-box
+    +regular
+
+h1, h2, h3, h4, h5, h6, p, span
+    margin: 0
+    padding: 0
+    color: $primary-text
+
+h3
+    font-size: 16px
+
+body    
+    background-color: $bg-color
+
+.container
+    width: 1110px
+    margin: auto
+
+.main
+    margin-top: 105px
+
+.global-info
+    width: 100%
+    box-shadow: 0px 3px 10px rgba(0, 73, 129, 0.1)
+    border-radius: 5px
+    padding: 10px 20px
+    font-size: 14px
+    line-height: 20px
+    background-color: #fff
+    margin-bottom: 10px
+    &--warning
+        background-color: $info-color
+
+input, textarea
+    box-shadow: none
+    -webkit-appearance: none
+    -moz-appearance: none
+    appearance: none
+    outline: none
+    font-size: 14px
+    background-color: white !important
+    &::placeholder
+        color: $after-color-1
+
+
+input[type=range]
+    width: 100%
+    &::-webkit-slider-thumb
+        -webkit-appearance: none
+        appearance: none
+        height: 18px
+        width: 18px
+        background-color: #fff
+        border-radius: 50%
+        cursor: pointer
+        box-shadow: 0px 2px 7px rgba(0, 0, 0, 0.15)
+        z-index: 999
+        position: relative
+
+textarea
+    resize: none
+    -webkit-appearance: none !important
+    box-shadow: none !important
+
+select
+    outline: none
+    background: transparent !important
+    box-shadow: none !important
+    -webkit-appearance: none !important
+
+.column-child
+    margin-bottom: 18px
+    width: 100%
+    &:last-child
+        margin-bottom: 0
+    &__title
+        margin-bottom: 8px
+
+.subtitle
+    font-size: 12px
+    line-height: 14px
+
+.link
+    text-decoration: none
+    color: $indicator-color
+    transition: 0.3s
+    &:hover
+        color: $indicator-color--hovered
+
+.button
+    width: 170px
+    height: 36px
+    font-size: 14px
+    border-radius: 5px
+    background-color: $button-color
+    border: none
+    padding: 10px
+    box-shadow: 1px 2px 4px rgba(0, 0, 0, 0.15)
+    outline: none
+    cursor: pointer
+    white-space: nowrap !important
+    word-wrap: normal !important
+    text-overflow: "-" !important
+    color: white
+    overflow: hidden
+    &--white
+        background-color: #fff
+        color: $primary-text
+        width: 219px
+
+.input
+    padding: 10px
+    padding-bottom: 9px
+    &[type="number"]
+        padding-right: 0
+    &--disabled
+        border-color: rgba(150, 150, 150, 0.1) !important
+        pointer-events: none
+        color: white !important
+
+.select
+    padding-left: 10px
+    font-size: 14px
+    color: $secondary-text
+    &:focus
+        color: $primary-text
+
+.input, .select
+    height: 36px
+    border-radius: 5px
+    border: 1px solid $after-color-2
+    transition: 0.3s
+    color: $primary-text
+    &:focus
+        border-color: $primary-text
+
+
+.gray-text
+    color: $secondary-text
+
+.necessarily
+    color: #F12B2C
+    font-size: 12px
+    line-height: 14px
+    
+.rectangle-block
+    border-radius: 10px
+    box-shadow: 0px 3px 10px rgba(0, 73, 129, 0.1)
+    background-color: white
+    padding: 20px
+
+.heading-row
+    line-height: 28px
+    margin-top: 30px
+    height: 50px
+    display: flex
+    justify-content: space-between
+    &--horizontal
+        align-items: center
+        margin-bottom: 10px
+    .buttons
+        display: flex
+        justify-content: space-between
+        &__button
+            margin-left: 20px
+    .price__link
+        font-size: 14px
+        line-height: 35px
+        margin-left: 30px
+    h1, h2, h3, h4, h5, h6
+        font-size: 24px
+
+.dropdown
+    cursor: pointer
+    -webkit-touch-callout: none
+    -webkit-user-select: none
+    -khtml-user-select: none
+    -moz-user-select: none
+        -ms-user-select: none
+            user-select: none
+    position: relative
+    border: 1px solid $after-color-2
+    border-radius: 5px
+    transition: 0.3s
+    .dropdown__added
+        &:last-child
+            &::after
+                display: none
+        &::after
+            content: ', '            
+    .dropdown__body
+        padding: 9px 10px
+        padding-right: 25px
+        transition: 0.3s
+        font-size: 14px
+        overflow: hidden
+        .dropdown__text
+            white-space: nowrap
+            width: 100%
+            display: block
+            overflow: hidden
+        &::after
+            content: ''
+            border: 5px solid transparent
+            border-top: 5px solid $after-color-1
+            position: absolute
+            right: 10px
+            top: 15px
+            transform-origin: 5px 2px
+            transition: 0.2s
+        .dropdown__text
+            color: $secondary-text
+    &--open
+        border-bottom-left-radius: 0
+        border-bottom-right-radius: 0
+        border-color: $primary-text
+        position: relative
+        .dropdown__body
+            &::after
+                transform: rotateZ(180deg)
+        .list
+            height: 216px
+    &:not(.dropdown--open)
+        .list
+            display: none
+    .list
+        padding: 0 10px 10px 10px
+        position: absolute
+        overflow-y: auto
+        background-color: #fff
+        width: calc(100% + 2px)
+        left: -1px
+        border: 1px solid $primary-text
+        z-index: 999
+
+.dropdown-wrapper
+    position: relative
+    &::after
+        content: ''
+        border: 5px solid transparent
+        border-top: 5px solid $after-color-1
+        position: absolute
+        right: 10px
+        top: 16px
+        transform-origin: 5px 2px
+        transition: 0.2s
+    &--active
+        &::after
+            transform: rotateZ(180deg)
+
+.option
+    display: flex
+    align-items: center
+    cursor: pointer
+    margin-top: 5px
+    &:hover
+        .option__select
+        &::before
+            border-color: $primary-text
+    &--disabled
+        pointer-events: none
+        .option__select
+        &::before
+            border-color: $after-color-1
+        .option__title
+            color: $after-color-1
+    &--active
+        .option__select
+            &::before
+                background-color: $indicator-color !important
+                border-color: $indicator-color !important
+            &::after
+                content: ''
+                display: block
+                width: 3px
+                height: 6px
+                position: absolute
+                border-bottom: 2px solid white
+                border-right: 2px solid white
+                left: 6px
+                top: 1px
+                transform: rotateZ(35deg) 
+    &__select
+        position: relative
+        width: 13px
+        height: 13px
+        display: block
+        &::before
+            content: ''
+            display: block
+            width: 13px
+            height: 13px
+            position: absolute
+            background-color: transparent
+            border: 1px solid $secondary-text
+            left: 1px
+            top: -2px
+            border-radius: 3px
+            transition: 0.3s
+    &__title
+        font-size: 14px
+        margin-top: 1px
+        margin-left: 8px
+        line-height: 17px
+
+.currently-hidden
+    display: none
+
+.tag.currently-hidden
+    display: none !important
+
+strong
+    +regular
+    font-weight: 500
+
+@media (max-width: 1110px)
+    .container
+        width: 100%
+        padding: 15px
+
+@media (min-width: 768px)
+    .only-mobile
+        display: none
+    .only-desktop
+        &--inline
+            display: inline
+        &--block
+            display: block
+        &--flex
+            display: flex
+
+@media (max-width: 768px)
+    .main
+        margin-top: 80px
+    .rectangle-block
+        padding: 15px
+    .only-desktop
+        display: none !important
+    .only-mobile
+        &--inline
+            display: inline
+        &--block
+            display: block
+        &--flex
+            display: flex
+    .main
+        .container
+            display: flex
+            flex-direction: column
+            .coverage
+                order: 3
+            .general-info
+                order: 5
+            .formats
+                order: 4
+    .heading-row
+        h1, h2, h3, h4, h5, h6
+            font-size: 20px
+    .option
+        &__select
+            &::before
+                width: 22px
+                height: 22px
+            &::after
+                width: 5px !important
+                height: 10px !important
+                left: 9px !important
+                top: 2px !important
+        &__title
+            margin-left: 20px
+            margin-top: 7px
+    .dropdown
+        .option
+            margin-bottom: 10px
+            &__title
+                margin-top: 5px
+    .tooltip
+        margin-top: 3px !important
+        width: 16px !important
+        height: 16px !important
+        font-size: 11px !important
+        &__frame
+            top: 25px !important
+
+@media (max-width: 360px)
+    .heading-row
+        h1, h2, h3, h4, h5, h6
+            font-size: 18px
+    
+    
