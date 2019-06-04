@@ -1302,84 +1302,104 @@ strong {
   line-height: 17px;
 }
 
-.full-table .rectangle-block-wrapper .rectangle-block .table .table-blogger:not(.table-blogger--open):not(.table-blogger--loading) > .tr:not(:first-child) {
+.full-table .rectangle-block-wrapper .rectangle-block .table:not(.blogger--loading) .loader {
   display: none;
 }
 
-.full-table .rectangle-block-wrapper .rectangle-block .table .table-blogger:not(.table-blogger--loading) .loader {
-  display: none;
+.full-table .rectangle-block-wrapper .rectangle-block .table.blogger--loading .blogger--original .tr .td:not(:first-child) {
+  background-color: #FFFCE3;
 }
 
-.full-table .rectangle-block-wrapper .rectangle-block .table .table-blogger {
-  position: relative;
+.full-table .rectangle-block-wrapper .rectangle-block .table.blogger--loading .blogger--original .tr .td:first-child {
+  background-color: #FBC400;
+  color: #FBC400;
 }
 
-.full-table .rectangle-block-wrapper .rectangle-block .table .table-blogger .tr .td:first-child {
-  cursor: pointer;
-}
-
-.full-table .rectangle-block-wrapper .rectangle-block .table .table-blogger--loading .loader {
+.full-table .rectangle-block-wrapper .rectangle-block .table.blogger--loading .blogger--copy .loader {
   z-index: 99999;
 }
 
-.full-table .rectangle-block-wrapper .rectangle-block .table .table-blogger--loading .tr:nth-child(3) .td:first-child {
-  position: relative;
-  color: #192229;
-  padding-left: 7px;
+.full-table .rectangle-block-wrapper .rectangle-block .table.blogger--loading .blogger--copy .tr, .full-table .rectangle-block-wrapper .rectangle-block .table.blogger--loading .blogger--copy .td, .full-table .rectangle-block-wrapper .rectangle-block .table.blogger--loading .blogger--copy a, .full-table .rectangle-block-wrapper .rectangle-block .table.blogger--loading .blogger--copy i {
+  color: #FFFCE3;
 }
 
-.full-table .rectangle-block-wrapper .rectangle-block .table .table-blogger--loading .tr:not(:first-child) .td {
-  background-color: #F8F8F8;
-  color: #F8F8F8;
-}
-
-.full-table .rectangle-block-wrapper .rectangle-block .table .table-blogger--loading .tr:not(:first-child) .td:not(:first-child) {
+.full-table .rectangle-block-wrapper .rectangle-block .table.blogger--loading .blogger--copy .tr:not(:first-child) .td:not(:first-child) {
   border: none;
 }
 
-.full-table .rectangle-block-wrapper .rectangle-block .table .table-blogger--loading .tr:not(:first-child) .td * {
-  color: #F8F8F8;
+.full-table .rectangle-block-wrapper .rectangle-block .table.blogger--loading .blogger--copy .tr:first-child .td:not(:first-child) {
+  border-right: none;
+  border-left: none;
 }
 
-.full-table .rectangle-block-wrapper .rectangle-block .table .table-blogger--loading .tr .td {
-  background-color: #FFFCE3;
-}
-
-.full-table .rectangle-block-wrapper .rectangle-block .table .table-blogger--loading .tr .td:first-child {
-  background-color: #FBC400;
-  color: #FBC400;
-  border-top: none;
-  border-bottom: none;
-}
-
-.full-table .rectangle-block-wrapper .rectangle-block .table .table-blogger--open .tr:nth-child(3) .td:first-child {
-  position: relative;
+.full-table .rectangle-block-wrapper .rectangle-block .table.blogger--loading .blogger--copy .tr:nth-child(2) .td {
   color: #192229;
-  padding-left: 7px;
 }
 
-.full-table .rectangle-block-wrapper .rectangle-block .table .table-blogger--open .tr .td {
+.full-table .rectangle-block-wrapper .rectangle-block .table.blogger:not(.blogger--open):not(.blogger--loading) .blogger--copy {
+  display: none;
+}
+
+.full-table .rectangle-block-wrapper .rectangle-block .table.blogger.blogger--open .blogger--original .tr .td {
   background-color: #FFFCE3;
 }
 
-.full-table .rectangle-block-wrapper .rectangle-block .table .table-blogger--open .tr .td:first-child {
+.full-table .rectangle-block-wrapper .rectangle-block .table.blogger.blogger--open .blogger--original .tr .td:first-child {
   background-color: #FBC400;
   color: #FBC400;
+}
+
+.full-table .rectangle-block-wrapper .rectangle-block .table.blogger .blogger--copy .tr:not(:nth-child(2)) .td:first-child {
+  color: #FBC400;
+}
+
+.full-table .rectangle-block-wrapper .rectangle-block .table.blogger .blogger--copy .tr .td {
+  background-color: #FFFCE3;
+}
+
+.full-table .rectangle-block-wrapper .rectangle-block .table.blogger .blogger--copy .tr .td:first-child {
+  background-color: #FBC400;
   border-top: none;
   border-bottom: none;
+}
+
+.full-table .rectangle-block-wrapper .rectangle-block .table .blogger-review .emul {
+  background-color: #FBC400;
+  border-right: 1px solid #D5DFE4;
+}
+
+.full-table .rectangle-block-wrapper .rectangle-block .table .blogger-review:not(.blogger-review--open) {
+  display: none;
+}
+
+.full-table .rectangle-block-wrapper .rectangle-block .table .blogger-review .blogger-review-col {
+  background-color: #FFFCE3;
+  padding: 13px 20px 15px calc(15px + 20px);
+  line-height: 20px;
+  position: relative;
+  border: none;
 }
 
 .full-table .rectangle-block-wrapper .rectangle-block .table .tr {
   height: 44px;
 }
 
+.full-table .rectangle-block-wrapper .rectangle-block .table .tr:last-child .td, .full-table .rectangle-block-wrapper .rectangle-block .table .tr:last-child .th {
+  border-bottom: none;
+}
+
 .full-table .rectangle-block-wrapper .rectangle-block .table .tr:nth-child(2n) {
   background-color: #F8F8F8;
+}
+
+.full-table .rectangle-block-wrapper .rectangle-block .table .tr .td:first-child {
+  cursor: pointer;
 }
 
 .full-table .rectangle-block-wrapper .rectangle-block .table .tr .th, .full-table .rectangle-block-wrapper .rectangle-block .table .tr .td {
   padding: 4px 10px;
   border: 1px solid #D5DFE4;
+  border-bottom: none;
   text-align: left;
   overflow: hidden;
 }
@@ -1440,11 +1460,25 @@ strong {
 }
 
 .full-table .rectangle-block-wrapper .rectangle-block .table .tr .th:nth-last-child(10), .full-table .rectangle-block-wrapper .rectangle-block .table .tr .th:nth-last-child(11), .full-table .rectangle-block-wrapper .rectangle-block .table .tr .td:nth-last-child(10), .full-table .rectangle-block-wrapper .rectangle-block .table .tr .td:nth-last-child(11) {
-  width: 151px;
+  min-width: 150px;
 }
 
-.full-table .rectangle-block-wrapper .rectangle-block .table .tr .th:nth-last-child(11), .full-table .rectangle-block-wrapper .rectangle-block .table .tr .td:nth-last-child(11) {
+.full-table .rectangle-block-wrapper .rectangle-block .table .tr .th:nth-last-child(10) .td-con, .full-table .rectangle-block-wrapper .rectangle-block .table .tr .th:nth-last-child(11) .td-con, .full-table .rectangle-block-wrapper .rectangle-block .table .tr .td:nth-last-child(10) .td-con, .full-table .rectangle-block-wrapper .rectangle-block .table .tr .td:nth-last-child(11) .td-con {
+  overflow: hidden;
+}
+
+.full-table .rectangle-block-wrapper .rectangle-block .table .tr .th:nth-last-child(10) .td-con a, .full-table .rectangle-block-wrapper .rectangle-block .table .tr .th:nth-last-child(11) .td-con a, .full-table .rectangle-block-wrapper .rectangle-block .table .tr .td:nth-last-child(10) .td-con a, .full-table .rectangle-block-wrapper .rectangle-block .table .tr .td:nth-last-child(11) .td-con a {
+  overflow: hidden;
+  white-space: pre;
+  text-overflow: ellipsis;
+}
+
+.full-table .rectangle-block-wrapper .rectangle-block .table .tr .th:nth-last-child(12), .full-table .rectangle-block-wrapper .rectangle-block .table .tr .td:nth-last-child(12) {
   width: 92px;
+}
+
+.full-table .rectangle-block-wrapper .rectangle-block .table .tr .th:nth-last-child(13), .full-table .rectangle-block-wrapper .rectangle-block .table .tr .td:nth-last-child(13) {
+  width: 18px;
 }
 
 .full-table .rectangle-block-wrapper .rectangle-block .table .tr.show-more .td {
