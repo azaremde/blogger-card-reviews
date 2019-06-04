@@ -833,6 +833,38 @@ select {
   color: #6A7B83;
 }
 
+.loader {
+  border: 1px solid white;
+  border-radius: 50%;
+  border-top: 1px solid #49A0F1;
+  width: 5px;
+  height: 5px;
+  -webkit-animation: spin 0.5s linear infinite;
+  animation: spin 0.5s linear infinite;
+  position: absolute;
+  left: 50%;
+}
+
+@-webkit-keyframes spin {
+  0% {
+    -webkit-transform: rotate(0deg) scale(10);
+  }
+  100% {
+    -webkit-transform: rotate(360deg) scale(10);
+  }
+}
+
+@keyframes spin {
+  0% {
+    -webkit-transform: rotate(0deg) scale(10);
+            transform: rotate(0deg) scale(10);
+  }
+  100% {
+    -webkit-transform: rotate(360deg) scale(10);
+            transform: rotate(360deg) scale(10);
+  }
+}
+
 .rate-row {
   position: relative;
   width: 100%;
@@ -1207,6 +1239,16 @@ strong {
   padding: 0 0 40px 0;
 }
 
+.full-table .rectangle-block-wrapper .rectangle-block .mouseover-tooltip {
+  height: 44px;
+  position: absolute;
+  font-size: 14px !important;
+  padding: 5px 10px;
+  background-color: #192229;
+  color: white;
+  border-radius: 5px;
+}
+
 .full-table .rectangle-block-wrapper .rectangle-block .upper-part {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -1256,11 +1298,75 @@ strong {
 .full-table .rectangle-block-wrapper .rectangle-block .table {
   border-collapse: collapse;
   width: 100%;
-}
-
-.full-table .rectangle-block-wrapper .rectangle-block .table * {
   font-size: 14px;
   line-height: 17px;
+}
+
+.full-table .rectangle-block-wrapper .rectangle-block .table .table-blogger:not(.table-blogger--open):not(.table-blogger--loading) > .tr:not(:first-child) {
+  display: none;
+}
+
+.full-table .rectangle-block-wrapper .rectangle-block .table .table-blogger:not(.table-blogger--loading) .loader {
+  display: none;
+}
+
+.full-table .rectangle-block-wrapper .rectangle-block .table .table-blogger {
+  position: relative;
+}
+
+.full-table .rectangle-block-wrapper .rectangle-block .table .table-blogger .tr .td:first-child {
+  cursor: pointer;
+}
+
+.full-table .rectangle-block-wrapper .rectangle-block .table .table-blogger--loading .loader {
+  z-index: 99999;
+}
+
+.full-table .rectangle-block-wrapper .rectangle-block .table .table-blogger--loading .tr:nth-child(3) .td:first-child {
+  position: relative;
+  color: #192229;
+  padding-left: 7px;
+}
+
+.full-table .rectangle-block-wrapper .rectangle-block .table .table-blogger--loading .tr:not(:first-child) .td {
+  background-color: #F8F8F8;
+  color: #F8F8F8;
+}
+
+.full-table .rectangle-block-wrapper .rectangle-block .table .table-blogger--loading .tr:not(:first-child) .td:not(:first-child) {
+  border: none;
+}
+
+.full-table .rectangle-block-wrapper .rectangle-block .table .table-blogger--loading .tr:not(:first-child) .td * {
+  color: #F8F8F8;
+}
+
+.full-table .rectangle-block-wrapper .rectangle-block .table .table-blogger--loading .tr .td {
+  background-color: #FFFCE3;
+}
+
+.full-table .rectangle-block-wrapper .rectangle-block .table .table-blogger--loading .tr .td:first-child {
+  background-color: #FBC400;
+  color: #FBC400;
+  border-top: none;
+  border-bottom: none;
+}
+
+.full-table .rectangle-block-wrapper .rectangle-block .table .table-blogger--open .tr:nth-child(3) .td:first-child {
+  position: relative;
+  color: #192229;
+  padding-left: 7px;
+}
+
+.full-table .rectangle-block-wrapper .rectangle-block .table .table-blogger--open .tr .td {
+  background-color: #FFFCE3;
+}
+
+.full-table .rectangle-block-wrapper .rectangle-block .table .table-blogger--open .tr .td:first-child {
+  background-color: #FBC400;
+  color: #FBC400;
+  border-top: none;
+  border-bottom: none;
 }
 
 .full-table .rectangle-block-wrapper .rectangle-block .table .tr {
@@ -1272,7 +1378,7 @@ strong {
 }
 
 .full-table .rectangle-block-wrapper .rectangle-block .table .tr .th, .full-table .rectangle-block-wrapper .rectangle-block .table .tr .td {
-  padding: 4px 15px;
+  padding: 4px 10px;
   border: 1px solid #D5DFE4;
   text-align: left;
   overflow: hidden;
@@ -1280,6 +1386,7 @@ strong {
 
 .full-table .rectangle-block-wrapper .rectangle-block .table .tr .th .td-con, .full-table .rectangle-block-wrapper .rectangle-block .table .tr .td .td-con {
   height: 44px;
+  width: 100%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;

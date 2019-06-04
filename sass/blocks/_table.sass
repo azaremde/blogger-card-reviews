@@ -4,6 +4,14 @@
         margin-bottom: 66px
         .rectangle-block
             padding: 0 0 40px 0
+            .mouseover-tooltip
+                height: 44px
+                position: absolute
+                font-size: 14px !important
+                padding: 5px 10px
+                background-color: $primary-text
+                color: white
+                border-radius: 5px
             .upper-part
                 display: flex
                 justify-content: space-between
@@ -30,20 +38,73 @@
             .table
                 border-collapse: collapse
                 width: 100%
-                *
-                    font-size: 14px
-                    line-height: 17px
+                font-size: 14px
+                line-height: 17px
+                .table-blogger
+                    &:not(.table-blogger--open):not(.table-blogger--loading) > .tr:not(:first-child)
+                        display: none
+                    &:not(.table-blogger--loading)
+                        .loader
+                            display: none
+                .table-blogger
+                    position: relative
+                    .tr
+                        .td
+                            &:first-child
+                                cursor: pointer
+                    &--loading
+                        .loader
+                            z-index: 99999
+                        .tr
+                            &:nth-child(3)
+                                .td
+                                    &:first-child
+                                        position: relative
+                                        color: $primary-text
+                                        padding-left: 7px
+                            &:not(:first-child)
+                                .td
+                                    &:not(:first-child)
+                                        border: none
+                                    background-color: #F8F8F8
+                                    color: #F8F8F8
+                                    *
+                                        color: #F8F8F8
+                                    .td-con
+                            .td
+                                background-color: #FFFCE3
+                                &:first-child
+                                    background-color: #FBC400
+                                    color: #FBC400
+                                    border-top: none
+                                    border-bottom: none
+                    &--open
+                        .tr
+                            &:nth-child(3)
+                                .td
+                                    &:first-child
+                                        position: relative
+                                        color: $primary-text
+                                        padding-left: 7px
+                            .td
+                                background-color: #FFFCE3
+                                &:first-child
+                                    background-color: #FBC400
+                                    color: #FBC400
+                                    border-top: none
+                                    border-bottom: none
                 .tr
                     height: 44px
                     &:nth-child(2n)
                         background-color: #F8F8F8
                     .th, .td
-                        padding: 4px 15px
+                        padding: 4px 10px
                         border: 1px solid $after-color-2
                         text-align: left
                         overflow: hidden
                         .td-con
                             height: 44px
+                            width: 100%
                             display: flex
                             align-items: center
                         &:first-child
