@@ -1,9 +1,29 @@
 .full-table
     .rectangle-block-wrapper
-        margin-top: 30px
-        margin-bottom: 66px
         .rectangle-block
             padding: 0 0 40px 0
+            &.mode--commerce
+                .only-blogger
+                    display: none !important
+                .upper-part
+                    .left-part
+                        .buttons
+                            .button
+                                &:first-child
+                                    background-color: #fff
+                                    color: $primary-text
+                                    border: 1px solid $after-color-2
+            &.mode--blogger
+                .only-commerce
+                    display: none
+                .upper-part
+                    .left-part
+                        .buttons
+                            .button
+                                &:last-child
+                                    background-color: #fff
+                                    color: $primary-text
+                                    border: 1px solid $after-color-2
             .mouseover-tooltip
                 height: 44px
                 position: absolute
@@ -12,6 +32,7 @@
                 background-color: $primary-text
                 color: white
                 border-radius: 5px
+                pointer-events: none
             .upper-part
                 display: flex
                 justify-content: space-between
@@ -40,133 +61,45 @@
                 width: 100%
                 font-size: 14px
                 line-height: 17px
-                &:not(.blogger--loading)
-                    .loader
-                        display: none
-                &.blogger                    
-                    &--loading
-                        .blogger--original
-                            .tr
-                                .td:not(:first-child)
-                                    background-color: #FFFCE3
-                                .td:first-child
-                                    background-color: #FBC400
-                                    color: #FBC400
-                        .blogger--copy
-                            .loader
-                                z-index: 99999
-                            .tr, .td, a, i
-                                color: #FFFCE3
-                            .tr
-                                &:not(:first-child)
-                                    .td:not(:first-child)
-                                        border: none
-                                &:first-child
-                                    .td:not(:first-child)
-                                        border-right: none
-                                        border-left: none
-                                &:nth-child(2)
-                                    .td
-                                        color: $primary-text
-                    &:not(.blogger--open):not(.blogger--loading)
-                        .blogger--copy
-                            display: none
-                    &.blogger--open
-                        .blogger--original
-                            .tr
-                                .td
-                                    background-color: #FFFCE3
-                                    &:first-child
-                                        background-color: #FBC400
-                                        color: #FBC400
-                    .blogger--original
-                    .blogger--copy
-                        .tr:not(:nth-child(2))
-                            .td
-                                &:first-child
-                                    color: #FBC400
-                        .tr
-                            .td
-                                background-color: #FFFCE3
-                                &:first-child
-                                    background-color: #FBC400
-                                    border-top: none
-                                    border-bottom: none
+                &.blogger:nth-child(2n + 1)
+                    background-color: #F8F8F8
                 .blogger-review
                     .emul
                         background-color: #FBC400
-                        border-right: 1px solid $after-color-2
                     &:not(.blogger-review--open)
-                        display: none
+                        display: none !important
                     .blogger-review-col
                         background-color: #FFFCE3
-                        padding: 13px 20px 15px calc(15px + 20px)
+                        padding: 18px 15px !important
                         line-height: 20px
                         position: relative
-                        border: none
                 .tr
                     height: 44px
                     &:last-child
                         .td, .th
                             border-bottom: none
-                    &:nth-child(2n)
-                        background-color: #F8F8F8
-                    .td
-                        &:first-child
-                            cursor: pointer
+                    //&:nth-child(2n)
+                    //    background-color: #F8F8F8
                     .th, .td
                         padding: 4px 10px
                         border: 1px solid $after-color-2
                         border-bottom: none
                         text-align: left
                         overflow: hidden
-                        .td-con
-                            height: 44px
-                            width: 100%
-                            display: flex
-                            align-items: center
-                        &:first-child
-                            max-width: 19px
-                            padding: 5px
-                            border-left: none
-                        &:last-child
-                            border-right: none
-                            width: 96px
-                        &:nth-last-child(2)
-                            width: 130px
-                        &:nth-last-child(3)
-                            width: 128px
-                        &:nth-last-child(4)
-                            width: 110px
-                        &:nth-last-child(5)
-                            width: 82px
-                            text-align: center
-                        &:nth-last-child(6)
-                            width: 91px
-                        &:nth-last-child(7)
-                            width: 83px
-                        &:nth-last-child(8)
-                            width: 114px
-                        &:nth-last-child(9)
-                            width: 104px
-                        &:nth-last-child(10), &:nth-last-child(11)
-                            min-width: 150px
-                            .td-con
-                                overflow: hidden
-                                a
-                                    overflow: hidden
-                                    white-space: pre
-                                    text-overflow: ellipsis
-                        &:nth-last-child(12)
-                            width: 92px
-                        &:nth-last-child(13)
-                            width: 18px
                     &.show-more
                         .td
                             text-align: center
                             background-color: #fff
                             padding: 20px
-                            color: $secondary-text                            
+                            color: $secondary-text        
+            .show-more
+                cursor: pointer
+                width: 100%
+                border-bottom: 1px solid $after-color-2
+                text-align: center
+                padding: 20px
+                font-size: 14px
+                color: $secondary-text
             .pages
                 padding-top: 30px
                 &__prev, &__next
@@ -217,5 +150,122 @@
                 .pages-wrapper
                     display: flex
                     justify-content: space-between
-                    width: 380px
                     margin: auto
+                    
+@media (min-width: 768px)
+    .rectangle-block-wrapper
+        margin-bottom: 30px
+        .pages-wrapper
+            width: 380px
+        .table
+            &:not(.blogger--loading)
+                .loader
+                    display: none
+            &.blogger
+                &.blogger--loading
+                    .blogger-review
+                        display: none
+                    .blogger--original
+                        .tr
+                            .td
+                                &:not(:first-child)
+                                    background-color: #FFFCE3
+                                &:first-child
+                                    background-color: #FBC400
+                                    color: #FBC400
+                    .blogger--copy
+                        .tr
+                            .td
+                                &:not(:first-child)
+                                    background-color: #F8F8F8
+                                    color: transparent
+                                    *
+                                        color: transparent
+                        .tr:not(:first-child)
+                            .td:not(:first-child)
+                                border-color: #F8F8F8
+                        .tr:first-child
+                            .td:not(:first-child)
+                                border-left: none
+                                border-right: none
+                &:not(.blogger--open):not(.blogger--loading)
+                    .blogger-review
+                        .emul
+                            display: none
+                        .blogger-review-col
+                            border-left-color: #FFFCE3 !important
+                    .blogger--copy
+                        max-height: 0
+                        overflow: hidden
+                        position: absolute
+                        //display: none
+                &.blogger--open
+                    .blogger--original
+                        .tr
+                            .td
+                                background-color: #FFFCE3
+                                &:first-child
+                                    background-color: #FBC400
+                                    color: #FBC400
+                .blogger--original
+                .blogger--copy
+                    .tr
+                        .td
+                            background-color: #FFFCE3
+                            &:first-child
+                                background-color: #FBC400
+                                border-top: none
+                                border-bottom: none
+                        .td.hold-shown
+                            &:first-child
+                                color: $primary-text
+                                padding-left: 7px
+            .tr
+                .td
+                    &:first-child
+                        cursor: pointer
+                &:not(.only-mobile)
+                    .th, .td
+                        .td-con
+                            height: 44px
+                            width: 100%
+                            display: flex
+                            align-items: center
+                        &:first-child
+                            max-width: 19px
+                            padding: 5px
+                            border-left: none
+                        &:last-child
+                            border-right: none
+                            width: 96px
+                        &:nth-last-child(2)
+                            width: 130px
+                        &:nth-last-child(3)
+                            width: 128px
+                        &:nth-last-child(4)
+                            width: 110px
+                        &:nth-last-child(5)
+                            width: 82px
+                            text-align: center
+                        &:nth-last-child(6)
+                            width: 91px
+                        &:nth-last-child(7)
+                            width: 83px
+                        &:nth-last-child(8)
+                            width: 114px
+                        &:nth-last-child(9)
+                            width: 104px
+                        &:nth-last-child(10), &:nth-last-child(11)
+                            min-width: 150px
+                            .td-con
+                                overflow: hidden
+                                a
+                                    overflow: hidden
+                                    white-space: pre
+                                    text-overflow: ellipsis
+                        &:nth-last-child(12)
+                            width: 92px
+                        &:nth-last-child(13)
+                            width: 18px
+            .show-more
+                border-top: 1px solid $after-color-2

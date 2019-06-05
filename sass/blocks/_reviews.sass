@@ -1,19 +1,7 @@
 .reviews
     .rectangle-block-wrapper
         display: flex
-        justify-content: space-between
         .rectangle-block
-            display: flex
-            justify-content: space-between
-            &:first-child
-                width: 77.2%
-                padding-bottom: 30px
-                padding-top: 20px
-                .column
-                    &:nth-child(1), &:nth-child(2), &:nth-child(3)
-                        width: 210px
-                    &:last-child
-                        width: 225px
             &:last-child
                 width: 20.5%
                 padding-bottom: 26px
@@ -30,6 +18,10 @@
                     justify-content: space-between
                     flex-wrap: wrap
                     width: 100%
+                    .select-wrapper
+                        width: 100%
+                        *
+                            color: #6A7B83
                     &:first-child
                         margin-bottom: 16px
                     &__title
@@ -40,3 +32,19 @@
                         width: calc(50% - 5px)
                     &__input[type=text]
                         width: 100%
+@media (min-width: 768px)
+    .reviews
+        .rectangle-block-wrapper
+            justify-content: space-between
+            .rectangle-block
+                display: flex
+                justify-content: space-between
+                &:first-child
+                    width: 77.2%
+                    padding-bottom: 30px
+                    padding-top: 20px
+                    .column
+                        &:nth-child(3), &:nth-child(4), &:nth-child(5)
+                            width: 210px
+                        &:last-child
+                            width: 225px

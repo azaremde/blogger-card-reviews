@@ -1,0 +1,82 @@
+@media (max-width: 768px)
+    .reviews
+        .rectangle-block-wrapper
+        .heading-row
+            .heading-row-buttons
+                &__button
+                    position: relative
+                    &.not-visited
+                        &::after
+                            content: ''
+                            display: block
+                            width: 5px
+                            height: 5px
+                            background-color: $button-color
+                            position: absolute
+                            right: 5px
+                            top: 7px
+                            border-radius: 50%
+                    &:first-child
+                        width: 86px
+                    &:last-child
+                        display: flex
+                        align-items: center
+                        margin-left: 10px
+                        img
+                            width: 16px
+                            height: 16px
+                            margin-left: 5px
+        .review
+            &:not(.review--open)
+                display: none 
+            position: absolute
+            flex-direction: column
+            z-index: 1000000
+            height: 100vh
+            top: 0
+            left: 0
+            width: 100vw
+            padding: 0
+            background: linear-gradient(to right, white 76%, rgba(0, 0, 0, 0.3) 76% 100%)
+            justify-content: flex-start
+            border-radius: 0
+            .title-column, .sort-column
+                border-bottom: 1px solid #E4EFF4
+                justify-content: space-between
+                align-items: center
+            .title-column
+                &__title
+                    font-size: 20px
+                &__close
+                    width: 20px
+                    height: 20px
+                    position: relative
+                    &::before, &::after
+                        content: ''
+                        position: absolute
+                        display: block
+                        width: 2px
+                        height: 20px
+                        background-color: $after-color-1
+                        right: 10px
+                    &::before
+                        transform: rotateZ(45deg)
+                    &::after
+                        transform: rotateZ(-45deg)
+            .sort-column
+                .select-wrapper
+                    width: 58px
+            .column, .mobile-column
+                width: 76vw
+                padding: 15px 20px
+            .column
+                padding: 15px 20px 0 20px
+                .option
+                    &__select
+                    &__title
+                        margin-top: 0
+                        margin-left: 24px
+                .row
+                    &__button
+                        width: 100%
+                        margin-top: 20px

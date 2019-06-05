@@ -1,0 +1,255 @@
+@media (max-width: 768px)
+    .full-table
+        .rectangle-block-wrapper
+            .rectangle-block
+                position: relative
+                .mobile-tooltip
+                    &:not(.mobile-tooltip--open)
+                        display: none
+                    position: absolute
+                    z-index: 999
+                    font-size: 14px
+                    line-height: 17px
+                    color: white
+                    background-color: $primary-text
+                    padding: 5px 10px
+                    border-radius: 5px
+                    max-width: 315px
+                .upper-part
+                    padding-left: 15px
+                    padding-right: 15px
+                    padding-top: 12px
+                    padding-bottom: 20px
+                    border-bottom: 1px solid $after-color-2
+                    .left-part
+                        width: 100%
+                        flex-wrap: wrap
+                        justify-content: space-between
+                        &__title
+                            font-size: 16px
+                        .buttons
+                            display: flex
+                        &__button
+                            margin: 0
+                            box-shadow: none
+                            &:first-child
+                                border-top-right-radius: 0
+                                border-bottom-right-radius: 0
+                            &:last-child
+                                border-top-left-radius: 0
+                                border-bottom-left-radius: 0
+                        .custom-search-field
+                            width: 100%
+                            margin-left: 0
+                            margin-top: 20px
+                            &__field
+                            &__button
+                    .right-part
+                .table
+                    &:not(.blogger--open)
+                        .blogger--copy
+                            max-height: 0
+                            display: block
+                            padding: 0
+                            border: none
+                            overflow: hidden
+                    .tooltip
+                        margin-left: 5px
+                        margin-bottom: 3px
+                        &__button
+                            width: 16px
+                            height: 16px
+                            padding: 0
+                            background-color: $after-color-1
+                            border: none
+                            border-radius: 50%
+                            text-align: center
+                            outline: none
+                    &:not(.blogger)
+                        display: none
+                    .blogger--copy
+                        background-color: #FFFCE3
+                    .blogger--original, .blogger--copy
+                        display: flex
+                        flex-wrap: wrap
+                        justify-content: space-between
+                        position: relative
+                        padding: 32px 15px 15px 15px
+                        border-bottom: 1px solid $after-color-2
+                        .tr
+                            border: none
+                            display: flex
+                            flex-direction: column
+                            height: auto
+                            &.only-mobile
+                                order: 1
+                                width: 50%
+                                font-size: 14px
+                                .td
+                                    width: 100%
+                            &:nth-child(2)
+                                order: 2
+                                width: 45%
+                            &:nth-child(3)
+                                order: 4
+                                margin-top: 15px
+                                width: 100%
+                                display: flex
+                                flex-direction: row
+                                justify-content: space-between
+                                .review-control
+                                    display: flex
+                                    flex-direction: column
+                                    height: 50px
+                                    width: auto
+                                    &__full
+                                        margin-bottom: 10px
+                                        display: flex
+                                        align-items: center
+                                        position: relative
+                                        justify-content: space-between
+                                        width: 130px
+                                        &--open
+                                            &::before
+                                                transform: rotateZ(180deg)
+                                        &::after
+                                            content: ''
+                                            width: 24px
+                                            height: 24px
+                                            border: 1px solid $after-color-2
+                                            display: block
+                                            background-color: #fff
+                                            border-radius: 5px
+                                        &::before
+                                            content: ''
+                                            position: absolute
+                                            right: 8px
+                                            transform-origin: 50% 25%
+                                            top: 11px
+                                            border: 5px solid transparent
+                                            border-top: 5px solid $secondary-text
+
+                                .review-button
+                                    display: block
+                                    width: 120px
+                                    height: 40px
+                                    .button
+                                        width: 111px
+                                        height: 36px
+                            &:nth-child(4)
+                                order: 3
+                                .emul
+                                    display: none
+                                .td
+                                    background-color: transparent
+                                    height: auto
+                                    line-height: 20px
+                                    margin-top: 12px
+                                    .gray-text
+                                        margin-bottom: 4px
+                            .td
+                                border: none
+                                padding: 0 !important
+                                height: 26px
+                                width: 100%
+                                .only-mobile
+                                    &--inline
+                                        &::before
+                                            content: ' '
+                                .td-con
+                                    height: 100%
+                                    display: flex
+                                    align-items: center
+                        .tr.only-mobile
+                            .td
+                                color: #59676E
+                        .tr:not(.only-mobile)
+                            .td
+                                &.table-blogger__date
+                                    position: absolute
+                                    color: $secondary-text
+                                    top: 10px
+                                    right: 15px
+                                    width: 50%
+                                    .td-con
+                                        flex-direction: row-reverse
+                                &:nth-child(11)
+                                    .td-con
+                                        text-overflow: ellipsis
+                                        display: block
+                                        margin-top: 6px
+                                        overflow: hidden
+                                        white-space: nowrap
+                                .td-con
+                                    width: 100%
+                                    height: 100%
+                &.mode--commerce
+                    .only-blogger
+                        display: none
+                    .table
+                        .tr
+                            .td__division
+                                margin-top: 30px
+                        .tr:not(.only-mobile)
+                            .td
+                                &:nth-child(5)
+                                    order: 1
+                                &:nth-child(9)
+                                    order: 2
+                                &:nth-child(4)
+                                    order: 3
+                                &:nth-child(11)
+                                    order: 4
+                                &:nth-child(8)
+                                    order: 5
+                                &:nth-child(7)
+                                    order: 6
+                                &:nth-child(6)
+                                    order: 7
+                                &:nth-child(12), &:nth-child(1), &:nth-child(3), &:nth-child(10), &:nth-child(13)
+                                    display: none
+                &.mode--blogger
+                    .only-commerce
+                        display: none
+                    .table
+                        .tr:not(.only-mobile)
+                            .td
+                                &:nth-child(6)
+                                    order: 1
+                                &:nth-child(7)
+                                    order: 2
+                                &:nth-child(8)
+                                    order: 3
+                                &:nth-child(4)
+                                    order: 4
+                                &:nth-child(9)
+                                    order: 5
+                                &:nth-child(5)
+                                    //order: 1
+                                    display: none
+                                &:nth-child(11)
+                                    //order: 4
+                                    display: none
+                                &:nth-child(12), &:nth-child(1), &:nth-child(3), &:nth-child(10), &:nth-child(13)
+                                    display: none
+                .pages
+                    .pages-wrapper
+                        padding-left: 46px
+                        padding-right: 46px
+                        .pages__prev.only-mobile, .pages__next.only-mobile
+                            width: 36px
+                            height: 36px
+                            padding: 0
+                            &::before
+                                content: ''
+                                width: 8px
+                                height: 8px
+                                display: block
+                                border-bottom: 1px solid $after-color-1
+                                border-right: 1px solid $after-color-1
+                        .pages__prev.only-mobile
+                            &::before
+                                transform: translateX(160%) rotateZ(135deg)
+                        .pages__next.only-mobile
+                            &::before
+                                transform: translateX(130%) rotateZ(-45deg)
