@@ -27,19 +27,22 @@
                             height: 16px
                             margin-left: 5px
         .review
-            &:not(.review--open)
-                display: none 
-            position: absolute
+            position: fixed
             flex-direction: column
             z-index: 1000000
-            height: 100vh
+            height: 100%
             top: 0
             left: 0
             width: 100vw
             padding: 0
+            padding-bottom: 20px
             background: linear-gradient(to right, white 76%, rgba(0, 0, 0, 0.3) 76% 100%)
             justify-content: flex-start
             border-radius: 0
+            &--open
+                overflow: scroll
+            &:not(.review--open)
+                display: none 
             .title-column, .sort-column
                 border-bottom: 1px solid #E4EFF4
                 justify-content: space-between

@@ -1293,23 +1293,27 @@ strong {
     margin-left: 5px;
   }
   .reviews .review {
-    position: absolute;
+    position: fixed;
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
         -ms-flex-direction: column;
             flex-direction: column;
     z-index: 1000000;
-    height: 100vh;
+    height: 100%;
     top: 0;
     left: 0;
     width: 100vw;
     padding: 0;
+    padding-bottom: 20px;
     background: -webkit-gradient(linear, left top, right top, color-stop(76%, white), color-stop(76%, rgba(0, 0, 0, 0.3)));
     background: linear-gradient(to right, white 76%, rgba(0, 0, 0, 0.3) 76% 100%);
     -webkit-box-pack: start;
         -ms-flex-pack: start;
             justify-content: flex-start;
     border-radius: 0;
+  }
+  .reviews .review--open {
+    overflow: scroll;
   }
   .reviews .review:not(.review--open) {
     display: none;
