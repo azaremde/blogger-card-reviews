@@ -1299,7 +1299,9 @@ strong {
         -ms-flex-direction: column;
             flex-direction: column;
     z-index: 1000000;
-    max-height: 100vh;
+    height: 100%;
+    overflow: visible;
+    -webkit-overflow-scrolling: auto;
     top: 0;
     left: 0;
     width: 100vw;
@@ -1333,15 +1335,17 @@ strong {
   .reviews .review .title-column__close {
     width: 20px;
     height: 20px;
-    position: relative;
+    right: 32px;
+    top: 33px;
+    position: absolute;
   }
   .reviews .review .title-column__close::before, .reviews .review .title-column__close::after {
     content: '';
     position: absolute;
     display: block;
-    width: 2px;
-    height: 20px;
-    background-color: #B4BDC1;
+    width: 4px;
+    height: 30px;
+    background-color: #FEFEFD;
     right: 10px;
   }
   .reviews .review .title-column__close::before {
