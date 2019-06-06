@@ -1362,7 +1362,7 @@ strong {
     background: -webkit-gradient(linear, left top, right top, color-stop(76%, white), color-stop(76%, rgba(0, 0, 0, 0.3)));
     background: linear-gradient(to right, white 76%, rgba(0, 0, 0, 0.3) 76% 100%);
     -webkit-transform: translate3d(0, 0, 0);
-    -webkit-overflow-scrolling: auto !important;
+    -webkit-overflow-scrolling: touch !important;
     left: 0;
     top: 0;
     z-index: 9999999;
@@ -1381,7 +1381,7 @@ strong {
     height: 760px;
     -webkit-box-shadow: none;
             box-shadow: none;
-    -webkit-overflow-scrolling: auto !important;
+    -webkit-overflow-scrolling: touch !important;
   }
   .reviews .review .title-column, .reviews .review .sort-column {
     border-bottom: 1px solid #E4EFF4;

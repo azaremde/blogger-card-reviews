@@ -295,6 +295,23 @@ OptionsHandler = () => {
 }
 
 ScrollFix = () => {
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     let scrollSpeed = 1.3;
 
     $.fn.moveIt = function(){
