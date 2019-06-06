@@ -522,11 +522,19 @@ input::placeholder, textarea::placeholder {
 }
 
 input[type=range] {
-  outline: none;
   width: 100%;
+  outline: none;
 }
 
 input[type=range] * {
+  outline: none;
+}
+
+input[type=range]:focus {
+  outline: none;
+}
+
+input[type=range]::-ms-track {
   outline: none;
 }
 
