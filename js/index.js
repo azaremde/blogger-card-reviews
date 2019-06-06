@@ -224,10 +224,10 @@ FilterHandler = () => {
                 filterBtn.removeClass('not-visited');
             }    
             filterWindow.addClass('review-wrapper--open');    
-            $('body, html').addClass('scroll-disabled');
+            $('body').addClass('scroll-disabled');
         } else {
             filterWindow.removeClass('review-wrapper--open');    
-            $('body, html').removeClass('scroll-disabled');
+            $('body').removeClass('scroll-disabled');
         }
 
         filterOpen = action;
@@ -323,6 +323,7 @@ $(document).ready(() => {
       };
       
       moveItItem.prototype.update = function(scrollTop){
+        //$($('.title-column__close')).css('transform', 'translateY(' + (scrollTop * 1000 / this.speed) + 'px)');
         $($('.review')[0]).css('transform', 'translateY(' + -(scrollTop * 500 / this.speed) + 'px)');
       };
       

@@ -455,6 +455,29 @@ body {
   position: fixed;
 }
 
+.scroll-disabled::before, .scroll-disabled::after {
+  content: '';
+  position: absolute;
+  display: block;
+  width: 4px;
+  height: 30px;
+  background-color: #FEFEFD;
+  z-index: 99999999;
+  right: 11%;
+  top: 6%;
+  pointer-events: none;
+}
+
+.scroll-disabled::before {
+  -webkit-transform: rotateZ(45deg);
+          transform: rotateZ(45deg);
+}
+
+.scroll-disabled::after {
+  -webkit-transform: rotateZ(-45deg);
+          transform: rotateZ(-45deg);
+}
+
 .global-info {
   width: 100%;
   -webkit-box-shadow: 0px 3px 10px rgba(0, 73, 129, 0.1);
