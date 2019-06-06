@@ -295,6 +295,8 @@ OptionsHandler = () => {
 }
 
 ScrollFix = () => {
+    let scrollSpeed = 1.3;
+
     $.fn.moveIt = function(){
         var instances = [];
         
@@ -316,7 +318,7 @@ ScrollFix = () => {
     };
       
     moveItItem.prototype.update = function(scrollTop){
-        $($('.review')[0]).css('transform', 'translateY(' + -(scrollTop * 500 / this.speed) + 'px)');
+        $($('.review')[0]).css('transform', 'translateY(' + -(scrollTop * 500 * scrollSpeed / this.speed) + 'px)');
     };
     
     $(function(){
