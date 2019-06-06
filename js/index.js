@@ -24,7 +24,6 @@ TooltipHandler = () => {
         let tdCons = $('.td-con');
         let textesBase = [];
         let tooltip = $('#mouseover-tooltip');
-        tooltip.fadeOut(0);
     
         $.map(tdCons, (element, i) => {
             textesBase.push(element.innerHTML);

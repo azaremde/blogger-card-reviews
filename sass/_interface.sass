@@ -312,23 +312,12 @@ select
             color: $secondary-text
 
 .loader 
-    border: 1px solid white
     border-radius: 50%
-    border-top: 1px solid #49A0F1
-    width: 5px
-    height: 5px
-    -webkit-animation: spin 0.5s linear infinite
-    animation: spin 0.5s linear infinite
+    width: 35px
+    height: 35px
+    transform: translateY(120px)
     position: absolute
     left: 50%
-
-@-webkit-keyframes spin
-    0% { -webkit-transform: translateY(120px) rotate(0deg) scale(10) }
-    100% { -webkit-transform: translateY(120px) rotate(360deg) scale(10) }
-
-@keyframes spin
-    0% { transform: translateY(120px) rotate(0deg) scale(10) }
-    100% { transform: translateY(120px) rotate(360deg) scale(10) }
         
 .rate-row
     position: relative
