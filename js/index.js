@@ -297,8 +297,6 @@ $(document).ready(() => {
 
 
 
-    
-    /*
 
   $.fn.moveIt = function(){
     var $window = $(window);
@@ -322,7 +320,7 @@ $(document).ready(() => {
   };
   
   moveItItem.prototype.update = function(scrollTop){
-    $('.review').css('transform', 'translateY(' + -(scrollTop * 500 / this.speed) + 'px)');
+    $($('[data-scroll-speed]')[0]).css('transform', 'translateY(' + -(scrollTop * 500 / this.speed) + 'px)');
   };
   
   // Initialization
@@ -333,8 +331,6 @@ $(document).ready(() => {
 
 
 
-
-*/
 
 
 

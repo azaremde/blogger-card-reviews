@@ -27,11 +27,10 @@
                             height: 16px
                             margin-left: 5px
         .review
-            position: fixed
+            position: absolute
             flex-direction: column
             z-index: 1000000
             height: 100%
-            overflow: visible
             -webkit-overflow-scrolling: auto
             top: 0
             left: 0
@@ -41,8 +40,7 @@
             background: linear-gradient(to right, white 76%, rgba(0, 0, 0, 0.3) 76% 100%)
             justify-content: flex-start
             border-radius: 0
-            &--open
-                overflow: scroll
+            overflow: auto
             &:not(.review--open)
                 display: none 
             .title-column, .sort-column

@@ -1293,14 +1293,13 @@ strong {
     margin-left: 5px;
   }
   .reviews .review {
-    position: fixed;
+    position: absolute;
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
         -ms-flex-direction: column;
             flex-direction: column;
     z-index: 1000000;
     height: 100%;
-    overflow: visible;
     -webkit-overflow-scrolling: auto;
     top: 0;
     left: 0;
@@ -1313,9 +1312,7 @@ strong {
         -ms-flex-pack: start;
             justify-content: flex-start;
     border-radius: 0;
-  }
-  .reviews .review--open {
-    overflow: scroll;
+    overflow: auto;
   }
   .reviews .review:not(.review--open) {
     display: none;
