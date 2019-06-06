@@ -1239,6 +1239,9 @@ strong {
         -ms-flex-pack: justify;
             justify-content: space-between;
   }
+  .reviews .rectangle-block-wrapper .review-wrapper {
+    width: 77.2%;
+  }
   .reviews .rectangle-block-wrapper .rectangle-block {
     display: -webkit-box;
     display: -ms-flexbox;
@@ -1248,7 +1251,7 @@ strong {
             justify-content: space-between;
   }
   .reviews .rectangle-block-wrapper .rectangle-block:first-child {
-    width: 77.2%;
+    width: 100%;
     padding-bottom: 30px;
     padding-top: 20px;
   }
@@ -1292,30 +1295,30 @@ strong {
     height: 16px;
     margin-left: 5px;
   }
-  .reviews .review {
-    position: absolute;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
-    z-index: 1000000;
-    height: 100%;
-    -webkit-overflow-scrolling: auto;
-    top: 0;
-    left: 0;
+  .reviews .review-wrapper {
     width: 100vw;
-    padding: 0;
-    padding-bottom: 20px;
+    position: fixed;
     background: -webkit-gradient(linear, left top, right top, color-stop(76%, white), color-stop(76%, rgba(0, 0, 0, 0.3)));
     background: linear-gradient(to right, white 76%, rgba(0, 0, 0, 0.3) 76% 100%);
-    -webkit-box-pack: start;
-        -ms-flex-pack: start;
-            justify-content: flex-start;
-    border-radius: 0;
+    -webkit-transform: translate3d(0, 0, 0);
+    -webkit-overflow-scrolling: auto !important;
+    left: 0;
+    top: 0;
+    z-index: 9999999;
+    -webkit-transition: 0s;
+    transition: 0s;
+    height: calc(100vh + 150px);
     overflow: auto;
   }
-  .reviews .review:not(.review--open) {
+  .reviews .review-wrapper:not(.review-wrapper--open) {
     display: none;
+  }
+  .reviews .review {
+    width: 76% !important;
+    z-index: 999;
+    padding: 0 !important;
+    height: 2700px;
+    -webkit-overflow-scrolling: auto !important;
   }
   .reviews .review .title-column, .reviews .review .sort-column {
     border-bottom: 1px solid #E4EFF4;
@@ -1326,14 +1329,17 @@ strong {
         -ms-flex-align: center;
             align-items: center;
   }
+  .reviews .review .title-column {
+    position: relative;
+  }
   .reviews .review .title-column__title {
     font-size: 20px;
   }
   .reviews .review .title-column__close {
-    width: 20px;
-    height: 20px;
-    right: 32px;
-    top: 33px;
+    width: 24vw;
+    height: 2700px;
+    right: -24vw;
+    top: 0;
     position: absolute;
   }
   .reviews .review .title-column__close::before, .reviews .review .title-column__close::after {
@@ -1343,7 +1349,8 @@ strong {
     width: 4px;
     height: 30px;
     background-color: #FEFEFD;
-    right: 10px;
+    right: 44px;
+    top: 40px;
   }
   .reviews .review .title-column__close::before {
     -webkit-transform: rotateZ(45deg);

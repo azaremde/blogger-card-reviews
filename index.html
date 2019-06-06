@@ -14,7 +14,7 @@
     <script src="js/index.js"></script>
     <script src="https://kit.fontawesome.com/340562d742.js"></script>
 </head>
-<body>
+<body class="scroll-disabled">
     <header class="header" id="header"><div class="container" id="to-include"></div></header>
 
     <div class="main">
@@ -28,81 +28,83 @@
                     </div>
                 </div>
                 <div class="rectangle-block-wrapper">
-                    <div class="rectangle-block review" data-scroll-speed="10">
-                        <div class="title-column mobile-column only-mobile only-mobile--flex">
-                            <h2 class="title-column__title">Фильтры</h2>
-                            <span class="title-column__close" id="filter-close-button"></span>
-                        </div>
-                        <div class="sort-column mobile-column only-mobile only-mobile--flex">
-                            <h3 class="sort-column__title">Показывать по</h3>
-                            <div class="select-wrapper">
-                                <select class="select">
-                                    <option value="0">25</option>
-                                    <option value="1" selected="true">50</option>
-                                    <option value="2">75</option>
-                                    <option value="3">100</option>
-                                </select>
+                    <div class="review-wrapper" data-scroll-speed="50">
+                        <div class="rectangle-block review">
+                            <div class="title-column mobile-column only-mobile only-mobile--flex">
+                                <h2 class="title-column__title">Фильтры</h2>
+                                <span class="title-column__close" id="filter-close-button"></span>
                             </div>
-                        </div>
-                        <div class="column">
-                            <div class="row">
-                                <h3 class="row__title">Кто рекламировал</h3>
-                                <input type="text" placeholder="Начните вводить ник" class="row__input input">
-                            </div>
-                            <div class="row">
-                                <h3 class="row__title">Формат рекламы</h3>
+                            <div class="sort-column mobile-column only-mobile only-mobile--flex">
+                                <h3 class="sort-column__title">Показывать по</h3>
                                 <div class="select-wrapper">
                                     <select class="select">
-                                        <option value="0" selected="true" disabled>Выберите из списка</option>
-                                        <option value="1">Любой</option>
-                                        <option value="2">Сторис</option>
-                                        <option value="3">Фото-пост</option>
-                                        <option value="4">Видео-пост</option>
-                                        <option value="5">Прямой эфир</option>
+                                        <option value="0">25</option>
+                                        <option value="1" selected="true">50</option>
+                                        <option value="2">75</option>
+                                        <option value="3">100</option>
                                     </select>
                                 </div>
                             </div>
-                        </div>
-                        <div class="column">
-                            <div class="row">
-                                <h3 class="row__title">Цена за рекламу в ₽</h3>
-                                <input type="number" placeholder="от 450" class="row__input input">
-                                <input type="number" placeholder="до 888 800" class="row__input input">
-                            </div>
-                            <div class="row">
-                                <h3 class="row__title">Цена за подписчика в ₽</h3>
-                                <input type="number" placeholder="от 1" class="row__input input">
-                                <input type="number" placeholder="до 400"  class="row__input input">
-                            </div>
-                        </div>
-                        <div class="column">
-                            <div class="row">
-                                <h3 class="row__title">Приход подписчиков</h3>
-                                <input type="number" placeholder="от 20" class="row__input input">
-                                <input type="number" placeholder="до 56 000"  class="row__input input">
-                            </div>
-                            <div class="row">
-                                <h3 class="row__title">Оценка <i class="fas fa-star"></i> <span id="rating"></span></h3>
-                                <div class="rate-row">
-                                    <div class="stripe"></div>
-                                    <input type="range" id="level" min="1" value="0" max="10">
-                                    <div class="numbers">
-                                        <span class="subtitle gray-text">1</span>
-                                        <span class="subtitle gray-text">10</span>
+                            <div class="column">
+                                <div class="row">
+                                    <h3 class="row__title">Кто рекламировал</h3>
+                                    <input type="text" placeholder="Начните вводить ник" class="row__input input">
+                                </div>
+                                <div class="row">
+                                    <h3 class="row__title">Формат рекламы</h3>
+                                    <div class="select-wrapper">
+                                        <select class="select">
+                                            <option value="0" selected="true" disabled>Выберите из списка</option>
+                                            <option value="1">Любой</option>
+                                            <option value="2">Сторис</option>
+                                            <option value="3">Фото-пост</option>
+                                            <option value="4">Видео-пост</option>
+                                            <option value="5">Прямой эфир</option>
+                                        </select>
                                     </div>
                                 </div>
                             </div>
-                        </div>
-                        <div class="column">
-                            <div class="row">
-                                <h3 class="row__title"> </h3>
-                                <div class="option">
-                                    <div class="option__select"></div>
-                                    <h6 class="option__title">Показать только доступных для заказа на сайте блогеров</h6>
+                            <div class="column">
+                                <div class="row">
+                                    <h3 class="row__title">Цена за рекламу в ₽</h3>
+                                    <input type="number" placeholder="от 450" class="row__input input">
+                                    <input type="number" placeholder="до 888 800" class="row__input input">
+                                </div>
+                                <div class="row">
+                                    <h3 class="row__title">Цена за подписчика в ₽</h3>
+                                    <input type="number" placeholder="от 1" class="row__input input">
+                                    <input type="number" placeholder="до 400"  class="row__input input">
                                 </div>
                             </div>
-                            <div class="row">
-                                <button class="row__button button button--white" id="reset-button">Сбросить</button>
+                            <div class="column">
+                                <div class="row">
+                                    <h3 class="row__title">Приход подписчиков</h3>
+                                    <input type="number" placeholder="от 20" class="row__input input">
+                                    <input type="number" placeholder="до 56 000"  class="row__input input">
+                                </div>
+                                <div class="row">
+                                    <h3 class="row__title">Оценка <i class="fas fa-star"></i> <span id="rating"></span></h3>
+                                    <div class="rate-row">
+                                        <div class="stripe"></div>
+                                        <input type="range" id="level" min="1" value="0" max="10">
+                                        <div class="numbers">
+                                            <span class="subtitle gray-text">1</span>
+                                            <span class="subtitle gray-text">10</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="column">
+                                <div class="row">
+                                    <h3 class="row__title"> </h3>
+                                    <div class="option">
+                                        <div class="option__select"></div>
+                                        <h6 class="option__title">Показать только доступных для заказа на сайте блогеров</h6>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <button class="row__button button button--white" id="reset-button">Сбросить</button>
+                                </div>
                             </div>
                         </div>
                     </div>

@@ -207,7 +207,7 @@ SwitchMode = () => {
 
 FilterHandler = () => {
     let filterBtn = $('#filter-button');
-    let filterWindow = $('.review');
+    let filterWindow = $('.review-wrapper');
     let filterCloseButton = $('#filter-close-button');
     let filterOpen = false;
     let percentToClose = 76;
@@ -223,10 +223,10 @@ FilterHandler = () => {
             if(filterBtn.hasClass('not-visited')) {
                 filterBtn.removeClass('not-visited');
             }    
-            filterWindow.addClass('review--open');    
+            filterWindow.addClass('review-wrapper--open');    
             $('body, html').addClass('scroll-disabled');
         } else {
-            filterWindow.removeClass('review--open');    
+            filterWindow.removeClass('review-wrapper--open');    
             $('body, html').removeClass('scroll-disabled');
         }
 
@@ -298,40 +298,40 @@ $(document).ready(() => {
 
 
 
-  $.fn.moveIt = function(){
-    var $window = $(window);
-    var instances = [];
-    
-    $(this).each(function(){
-      instances.push(new moveItItem($(this)));
-    });
-    
-    $('[data-scroll-speed]')[0].addEventListener('scroll', function() {
-      var scrollTop = $('[data-scroll-speed]').scrollTop();
-      instances.forEach(function(inst){
-        inst.update(scrollTop);
+
+
+
+    $.fn.moveIt = function(){
+        var $window = $(window);
+        var instances = [];
+        
+        $(this).each(function(){
+          instances.push(new moveItItem($(this)));
+        });
+        
+        $('[data-scroll-speed]')[0].addEventListener('scroll', function() {
+          var scrollTop = $('[data-scroll-speed]').scrollTop();
+          instances.forEach(function(inst){
+            inst.update(scrollTop);
+          });
+        }, {passive: true});
+      }
+      
+      var moveItItem = function(el){
+        this.el = $(el);
+        this.speed = parseInt(this.el.attr('data-scroll-speed')) * 10;
+      };
+      
+      moveItItem.prototype.update = function(scrollTop){
+        $($('.review')[0]).css('transform', 'translateY(' + -(scrollTop * 500 / this.speed) + 'px)');
+      };
+      
+      // Initialization
+      $(function(){
+        $('[data-scroll-speed]').moveIt();
       });
-    }, {passive: true});
-  }
-  
-  var moveItItem = function(el){
-    this.el = $(el);
-    this.speed = parseInt(this.el.attr('data-scroll-speed')) * 10;
-  };
-  
-  moveItItem.prototype.update = function(scrollTop){
-    $($('[data-scroll-speed]')[0]).css('transform', 'translateY(' + -(scrollTop * 500 / this.speed) + 'px)');
-  };
-  
-  // Initialization
-  $(function(){
-    $('[data-scroll-speed]').moveIt();
-  });
-
-
-
-
-
+    
+    
 
 
 
