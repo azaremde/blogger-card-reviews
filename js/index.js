@@ -62,13 +62,11 @@ TooltipHandler = () => {
                 }
             });
         });
-
-        $(window).on('click', (event) => {
-            if(event.target != tooltipBtns.get(0)) {
-                if(open) {
-                    tooltip.removeClass('mobile-tooltip--open');
-                    open = false;
-                }
+        
+        window.addEventListener('click', () => {
+            if(open) {
+                tooltip.removeClass('mobile-tooltip--open');
+                open = false;
             }
         });
     }
