@@ -214,6 +214,7 @@ FilterHandler = () => {
 
     let rangeInput = $('#level');
     let rating = $('#rating');
+    let darkStripe = $('#dark-stripe');
 
     let resetBtn = $('#reset-button');
     let reviewInputs = $('.review input');
@@ -235,6 +236,9 @@ FilterHandler = () => {
 
     rangeInput.on('input', () => {
         rating.html(rangeInput.val());
+        darkStripe.css({
+            width: (parseInt(rangeInput.val()) - 1) * 11.1111111111 + '%'   // 9 делений на инпуте - 100 / 9
+        });
     });
 
     filterBtn.on('click', () => {
@@ -258,6 +262,10 @@ FilterHandler = () => {
 
         $.map($('.review .select-wrapper .select'), (element) => {
             $(element).val('0');
+        });
+        
+        darkStripe.css({
+            width: (parseInt(rangeInput.val()) - 1) * 11.1111111111 + '%'   // 9 делений на инпуте - 100 / 9
         });
 
         rating.html('');
@@ -286,63 +294,39 @@ OptionsHandler = () => {
     });
 }
 
-$(document).ready(() => {
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+ScrollFix = () => {
     $.fn.moveIt = function(){
-        var $window = $(window);
         var instances = [];
         
         $(this).each(function(){
-          instances.push(new moveItItem($(this)));
+            instances.push(new moveItItem($(this)));
         });
         
         $('[data-scroll-speed]')[0].addEventListener('scroll', function() {
-          var scrollTop = $('[data-scroll-speed]').scrollTop();
-          instances.forEach(function(inst){
-            inst.update(scrollTop);
-          });
+            var scrollTop = $('[data-scroll-speed]').scrollTop();
+            instances.forEach(function(inst){
+                inst.update(scrollTop);
+            });
         }, {passive: true});
-      }
+    }
       
-      var moveItItem = function(el){
+    var moveItItem = function(el){
         this.el = $(el);
         this.speed = parseInt(this.el.attr('data-scroll-speed')) * 10;
-      };
+    };
       
-      moveItItem.prototype.update = function(scrollTop){
-        //$($('.title-column__close')).css('transform', 'translateY(' + (scrollTop * 1000 / this.speed) + 'px)');
+    moveItItem.prototype.update = function(scrollTop){
         $($('.review')[0]).css('transform', 'translateY(' + -(scrollTop * 500 / this.speed) + 'px)');
-      };
-      
-      // Initialization
-      $(function(){
+    };
+    
+    $(function(){
         $('[data-scroll-speed]').moveIt();
-      });
-    
-    
+    });
+}
 
-
-
-
-
-
-
-
-
+$(document).ready(() => {
     HeaderLoad();
+    ScrollFix();
     PlusHandler();
     TooltipHandler();
     SetTableWidth();

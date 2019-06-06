@@ -63,6 +63,7 @@
                 width: 100%
                 font-size: 14px
                 line-height: 17px
+                overflow: visible
                 &.blogger:nth-child(2n + 1)
                     background-color: #F8F8F8
                 .blogger-review
@@ -80,14 +81,12 @@
                     &:last-child
                         .td, .th
                             border-bottom: none
-                    //&:nth-child(2n)
-                    //    background-color: #F8F8F8
                     .th, .td
                         padding: 4px 10px
                         border: 1px solid $after-color-2
                         border-bottom: none
                         text-align: left
-                        overflow: hidden
+                        overflow: visible
                     &.show-more
                         .td
                             text-align: center
@@ -210,6 +209,26 @@
                                     background-color: #FBC400
                                     color: #FBC400
                 .blogger--original
+                .blogger-review
+                    .blogger-review-col
+                        &::before
+                            content: ''
+                            position: absolute
+                            top: -22px
+                            right: 10.9%
+                            border: 15px solid transparent
+                            border-bottom: 15px solid #FEFDE2
+                            transform: scaleY(0.5)
+                        &::after
+                            content: ''
+                            position: absolute
+                            top: -6px
+                            right: 11.6%
+                            width: 10px
+                            height: 10px
+                            border-bottom: 1px solid #D5DEE3
+                            border-right: 1px solid #D5DEE3
+                            transform: scaleX(1.8) rotateZ(-135deg)
                 .blogger--copy
                     .tr
                         .td
@@ -248,7 +267,11 @@
                             width: 110px
                         &:nth-last-child(5)
                             width: 82px
-                            text-align: center
+                            .td-con
+                                text-align: center
+                                justify-content: center
+                                i
+                                    margin-left: 3px
                         &:nth-last-child(6)
                             width: 91px
                         &:nth-last-child(7)

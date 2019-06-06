@@ -930,11 +930,16 @@ select {
 .rate-row .stripe {
   display: block;
   position: absolute;
-  width: 100%;
+  width: calc(100% - 7px);
   height: 1px;
   top: 9px;
   z-index: 1;
   background-color: #D5DFE4;
+}
+
+.rate-row .stripe--dark {
+  width: 0%;
+  background-color: #192229;
 }
 
 .rate-row .numbers {
@@ -1289,6 +1294,11 @@ strong {
   .reviews .rectangle-block-wrapper .rectangle-block:first-child .column:last-child {
     width: 225px;
   }
+  .reviews .rectangle-block-wrapper .rectangle-block:first-child .column .row__button {
+    width: 110px;
+    height: 32px;
+    padding: 2px 0 0 0;
+  }
 }
 
 @media (max-width: 768px) {
@@ -1482,6 +1492,7 @@ strong {
   width: 100%;
   font-size: 14px;
   line-height: 17px;
+  overflow: visible;
 }
 
 .full-table .rectangle-block-wrapper .rectangle-block .table.blogger:nth-child(2n + 1) {
@@ -1516,7 +1527,7 @@ strong {
   border: 1px solid #D5DFE4;
   border-bottom: none;
   text-align: left;
-  overflow: hidden;
+  overflow: visible;
 }
 
 .full-table .rectangle-block-wrapper .rectangle-block .table .tr.show-more .td {
@@ -1672,6 +1683,28 @@ strong {
     background-color: #FBC400;
     color: #FBC400;
   }
+  .rectangle-block-wrapper .table.blogger .blogger-review .blogger-review-col::before {
+    content: '';
+    position: absolute;
+    top: -22px;
+    right: 10.9%;
+    border: 15px solid transparent;
+    border-bottom: 15px solid #FEFDE2;
+    -webkit-transform: scaleY(0.5);
+            transform: scaleY(0.5);
+  }
+  .rectangle-block-wrapper .table.blogger .blogger-review .blogger-review-col::after {
+    content: '';
+    position: absolute;
+    top: -6px;
+    right: 11.6%;
+    width: 10px;
+    height: 10px;
+    border-bottom: 1px solid #D5DEE3;
+    border-right: 1px solid #D5DEE3;
+    -webkit-transform: scaleX(1.8) rotateZ(-135deg);
+            transform: scaleX(1.8) rotateZ(-135deg);
+  }
   .rectangle-block-wrapper .table.blogger .blogger--copy .tr .td {
     background-color: #FFFCE3;
   }
@@ -1717,7 +1750,15 @@ strong {
   }
   .rectangle-block-wrapper .table .tr:not(.only-mobile) .th:nth-last-child(5), .rectangle-block-wrapper .table .tr:not(.only-mobile) .td:nth-last-child(5) {
     width: 82px;
+  }
+  .rectangle-block-wrapper .table .tr:not(.only-mobile) .th:nth-last-child(5) .td-con, .rectangle-block-wrapper .table .tr:not(.only-mobile) .td:nth-last-child(5) .td-con {
     text-align: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+  .rectangle-block-wrapper .table .tr:not(.only-mobile) .th:nth-last-child(5) .td-con i, .rectangle-block-wrapper .table .tr:not(.only-mobile) .td:nth-last-child(5) .td-con i {
+    margin-left: 3px;
   }
   .rectangle-block-wrapper .table .tr:not(.only-mobile) .th:nth-last-child(6), .rectangle-block-wrapper .table .tr:not(.only-mobile) .td:nth-last-child(6) {
     width: 91px;

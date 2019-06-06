@@ -929,11 +929,16 @@ select {
 .rate-row .stripe {
   display: block;
   position: absolute;
-  width: 100%;
+  width: calc(100% - 7px);
   height: 1px;
   top: 9px;
   z-index: 1;
   background-color: #D5DFE4;
+}
+
+.rate-row .stripe--dark {
+  width: 0%;
+  background-color: #192229;
 }
 
 .rate-row .numbers {

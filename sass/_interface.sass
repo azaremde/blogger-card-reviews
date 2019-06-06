@@ -340,11 +340,14 @@ select
     .stripe
         display: block
         position: absolute
-        width: 100%
+        width: calc(100% - 7px)
         height: 1px
         top: 9px
         z-index: 1
         background-color: $after-color-2
+        &--dark
+            width: 0%
+            background-color: $primary-text
     .numbers
         display: flex
         justify-content: space-between
