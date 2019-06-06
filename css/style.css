@@ -1340,7 +1340,7 @@ strong {
     width: 76% !important;
     z-index: 999;
     padding: 0 !important;
-    height: 2700px;
+    height: 1000px;
     -webkit-overflow-scrolling: auto !important;
   }
   .reviews .review .title-column, .reviews .review .sort-column {
@@ -1360,7 +1360,7 @@ strong {
   }
   .reviews .review .title-column__close {
     width: 24vw;
-    height: 2700px;
+    height: 1000px;
     right: -24vw;
     top: 0;
     position: absolute;
