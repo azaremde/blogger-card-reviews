@@ -239,6 +239,7 @@ FilterHandler = () => {
         darkStripe.css({
             width: (parseInt(rangeInput.val()) - 1) * 11.1111111111 + '%'   // 9 делений на инпуте - 100 / 9
         });
+        alert(rangeInput.css('outline'));
     });
 
     filterBtn.on('click', () => {
