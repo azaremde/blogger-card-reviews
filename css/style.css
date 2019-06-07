@@ -1445,6 +1445,7 @@ strong {
   text-align: center;
   line-height: 32px;
   pointer-events: none;
+  z-index: 999;
 }
 
 .full-table .rectangle-block-wrapper .rectangle-block .mouseover-tooltip {
