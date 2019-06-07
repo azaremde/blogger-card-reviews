@@ -32,14 +32,17 @@ TooltipHandler = () => {
     
             if($(element).hasClass('ddd-truncated')) {
                 $(element).hover(() => {
-                    tooltip.fadeIn(50);
-                    tooltip.offset({left: $(element).offset().left - 5, top: $(element).offset().top});
+                    tooltip.fadeIn(300);
+                    tooltip.offset({
+                        left: $(element).offset().left - 5,
+                        top: $(element).offset().top + 8
+                    });
 
                     tooltip.html(textesBase[i]);
 
                     //$(element).append(tooltip);
                 }, () => {
-                    tooltip.fadeOut(50);
+                    tooltip.fadeOut(0);
                 });
             }
         });
@@ -96,6 +99,17 @@ PlusHandler = () => {
     }
 
     $.map(bloggers, (element, i) => {
+        $(element).find('.table-blogger__open-copies').hover(() => {
+            if(!tableOpen[i]) {
+                $('#plus-tooltip').fadeIn(300);
+                $('#plus-tooltip').offset({
+                    top: $(element).offset().top - $('#plus-tooltip').height() - 10
+                });
+            }
+        }, () => {
+            $('#plus-tooltip').fadeOut(0);
+        });
+
         $(element).find('.table-blogger__open-copies').on('click', () => {
             OpenReviews(element, i, true);
         });
@@ -188,6 +202,7 @@ SwitchMode = () => {
             table.removeClass('mode--commerce');
             table.addClass('mode--blogger');
             // Если таблица косится при большом объеме данных при переключении режима, раскомментить эту строку, чтобы ширина пересчитывалась
+            TooltipHandler();
             //SetTableWidth();
         }
     });
@@ -197,6 +212,7 @@ SwitchMode = () => {
             table.removeClass('mode--blogger');
             table.addClass('mode--commerce');
             // Если таблица косится при большом объеме данных при переключении режима, раскомментить эту строку, чтобы ширина пересчитывалась
+            TooltipHandler();
             //SetTableWidth();
         }
     });

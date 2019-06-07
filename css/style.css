@@ -962,6 +962,10 @@ select {
   width: 100%;
 }
 
+.select-wrapper .select:focus option {
+  color: #192229 !important;
+}
+
 .select-wrapper::after {
   content: '';
   border: 5px solid transparent;
@@ -1431,11 +1435,22 @@ strong {
   border: 1px solid #D5DFE4;
 }
 
-.full-table .rectangle-block-wrapper .rectangle-block .mouseover-tooltip {
+.full-table .rectangle-block-wrapper .rectangle-block .plus-tooltip {
   height: 44px;
   position: absolute;
   display: none;
-  font-size: 14px !important;
+  font-size: 14px;
+  padding: 5px 10px;
+  background-color: #F9D451;
+  text-align: center;
+  line-height: 32px;
+  pointer-events: none;
+}
+
+.full-table .rectangle-block-wrapper .rectangle-block .mouseover-tooltip {
+  position: absolute;
+  display: none;
+  font-size: 14px;
   padding: 5px 10px;
   background-color: #192229;
   color: white;
@@ -1744,51 +1759,51 @@ strong {
   .rectangle-block-wrapper .table .tr:not(.only-mobile) .th:nth-last-child(2), .rectangle-block-wrapper .table .tr:not(.only-mobile) .td:nth-last-child(2) {
     width: 130px;
   }
-  .rectangle-block-wrapper .table .tr:not(.only-mobile) .th:nth-last-child(3), .rectangle-block-wrapper .table .tr:not(.only-mobile) .td:nth-last-child(3) {
+  .rectangle-block-wrapper .table .tr:not(.only-mobile) .th:nth-last-child(3), .rectangle-block-wrapper .table .tr:not(.only-mobile) .th:nth-last-child(4), .rectangle-block-wrapper .table .tr:not(.only-mobile) .td:nth-last-child(3), .rectangle-block-wrapper .table .tr:not(.only-mobile) .td:nth-last-child(4) {
     width: 128px;
   }
-  .rectangle-block-wrapper .table .tr:not(.only-mobile) .th:nth-last-child(4), .rectangle-block-wrapper .table .tr:not(.only-mobile) .td:nth-last-child(4) {
+  .rectangle-block-wrapper .table .tr:not(.only-mobile) .th:nth-last-child(5), .rectangle-block-wrapper .table .tr:not(.only-mobile) .td:nth-last-child(5) {
     width: 110px;
   }
-  .rectangle-block-wrapper .table .tr:not(.only-mobile) .th:nth-last-child(5), .rectangle-block-wrapper .table .tr:not(.only-mobile) .td:nth-last-child(5) {
+  .rectangle-block-wrapper .table .tr:not(.only-mobile) .th:nth-last-child(6), .rectangle-block-wrapper .table .tr:not(.only-mobile) .td:nth-last-child(6) {
     width: 82px;
   }
-  .rectangle-block-wrapper .table .tr:not(.only-mobile) .th:nth-last-child(5) .td-con, .rectangle-block-wrapper .table .tr:not(.only-mobile) .td:nth-last-child(5) .td-con {
+  .rectangle-block-wrapper .table .tr:not(.only-mobile) .th:nth-last-child(6) .td-con, .rectangle-block-wrapper .table .tr:not(.only-mobile) .td:nth-last-child(6) .td-con {
     text-align: center;
     -webkit-box-pack: center;
         -ms-flex-pack: center;
             justify-content: center;
   }
-  .rectangle-block-wrapper .table .tr:not(.only-mobile) .th:nth-last-child(5) .td-con i, .rectangle-block-wrapper .table .tr:not(.only-mobile) .td:nth-last-child(5) .td-con i {
+  .rectangle-block-wrapper .table .tr:not(.only-mobile) .th:nth-last-child(6) .td-con i, .rectangle-block-wrapper .table .tr:not(.only-mobile) .td:nth-last-child(6) .td-con i {
     margin-left: 3px;
   }
-  .rectangle-block-wrapper .table .tr:not(.only-mobile) .th:nth-last-child(6), .rectangle-block-wrapper .table .tr:not(.only-mobile) .td:nth-last-child(6) {
+  .rectangle-block-wrapper .table .tr:not(.only-mobile) .th:nth-last-child(7), .rectangle-block-wrapper .table .tr:not(.only-mobile) .td:nth-last-child(7) {
     width: 91px;
   }
-  .rectangle-block-wrapper .table .tr:not(.only-mobile) .th:nth-last-child(7), .rectangle-block-wrapper .table .tr:not(.only-mobile) .td:nth-last-child(7) {
+  .rectangle-block-wrapper .table .tr:not(.only-mobile) .th:nth-last-child(8), .rectangle-block-wrapper .table .tr:not(.only-mobile) .td:nth-last-child(8) {
     width: 83px;
   }
-  .rectangle-block-wrapper .table .tr:not(.only-mobile) .th:nth-last-child(8), .rectangle-block-wrapper .table .tr:not(.only-mobile) .td:nth-last-child(8) {
+  .rectangle-block-wrapper .table .tr:not(.only-mobile) .th:nth-last-child(9), .rectangle-block-wrapper .table .tr:not(.only-mobile) .td:nth-last-child(9) {
     width: 114px;
   }
-  .rectangle-block-wrapper .table .tr:not(.only-mobile) .th:nth-last-child(9), .rectangle-block-wrapper .table .tr:not(.only-mobile) .td:nth-last-child(9) {
+  .rectangle-block-wrapper .table .tr:not(.only-mobile) .th:nth-last-child(10), .rectangle-block-wrapper .table .tr:not(.only-mobile) .td:nth-last-child(10) {
     width: 104px;
   }
-  .rectangle-block-wrapper .table .tr:not(.only-mobile) .th:nth-last-child(10), .rectangle-block-wrapper .table .tr:not(.only-mobile) .th:nth-last-child(11), .rectangle-block-wrapper .table .tr:not(.only-mobile) .td:nth-last-child(10), .rectangle-block-wrapper .table .tr:not(.only-mobile) .td:nth-last-child(11) {
+  .rectangle-block-wrapper .table .tr:not(.only-mobile) .th:nth-last-child(11), .rectangle-block-wrapper .table .tr:not(.only-mobile) .th:nth-last-child(12), .rectangle-block-wrapper .table .tr:not(.only-mobile) .td:nth-last-child(11), .rectangle-block-wrapper .table .tr:not(.only-mobile) .td:nth-last-child(12) {
     min-width: 150px;
   }
-  .rectangle-block-wrapper .table .tr:not(.only-mobile) .th:nth-last-child(10) .td-con, .rectangle-block-wrapper .table .tr:not(.only-mobile) .th:nth-last-child(11) .td-con, .rectangle-block-wrapper .table .tr:not(.only-mobile) .td:nth-last-child(10) .td-con, .rectangle-block-wrapper .table .tr:not(.only-mobile) .td:nth-last-child(11) .td-con {
+  .rectangle-block-wrapper .table .tr:not(.only-mobile) .th:nth-last-child(11) .td-con, .rectangle-block-wrapper .table .tr:not(.only-mobile) .th:nth-last-child(12) .td-con, .rectangle-block-wrapper .table .tr:not(.only-mobile) .td:nth-last-child(11) .td-con, .rectangle-block-wrapper .table .tr:not(.only-mobile) .td:nth-last-child(12) .td-con {
     overflow: hidden;
   }
-  .rectangle-block-wrapper .table .tr:not(.only-mobile) .th:nth-last-child(10) .td-con a, .rectangle-block-wrapper .table .tr:not(.only-mobile) .th:nth-last-child(11) .td-con a, .rectangle-block-wrapper .table .tr:not(.only-mobile) .td:nth-last-child(10) .td-con a, .rectangle-block-wrapper .table .tr:not(.only-mobile) .td:nth-last-child(11) .td-con a {
+  .rectangle-block-wrapper .table .tr:not(.only-mobile) .th:nth-last-child(11) .td-con a, .rectangle-block-wrapper .table .tr:not(.only-mobile) .th:nth-last-child(12) .td-con a, .rectangle-block-wrapper .table .tr:not(.only-mobile) .td:nth-last-child(11) .td-con a, .rectangle-block-wrapper .table .tr:not(.only-mobile) .td:nth-last-child(12) .td-con a {
     overflow: hidden;
     white-space: pre;
     text-overflow: ellipsis;
   }
-  .rectangle-block-wrapper .table .tr:not(.only-mobile) .th:nth-last-child(12), .rectangle-block-wrapper .table .tr:not(.only-mobile) .td:nth-last-child(12) {
+  .rectangle-block-wrapper .table .tr:not(.only-mobile) .th:nth-last-child(13), .rectangle-block-wrapper .table .tr:not(.only-mobile) .td:nth-last-child(13) {
     width: 92px;
   }
-  .rectangle-block-wrapper .table .tr:not(.only-mobile) .th:nth-last-child(13), .rectangle-block-wrapper .table .tr:not(.only-mobile) .td:nth-last-child(13) {
+  .rectangle-block-wrapper .table .tr:not(.only-mobile) .th:nth-last-child(14), .rectangle-block-wrapper .table .tr:not(.only-mobile) .td:nth-last-child(14) {
     width: 18px;
   }
   .rectangle-block-wrapper .show-more {
@@ -2049,8 +2064,7 @@ strong {
     text-overflow: ellipsis;
     display: block;
     margin-top: 6px;
-    overflow: hidden;
-    white-space: nowrap;
+    overflow: visible;
   }
   .full-table .rectangle-block-wrapper .rectangle-block .table .blogger--original .tr:not(.only-mobile) .td .td-con, .full-table .rectangle-block-wrapper .rectangle-block .table .blogger--copy .tr:not(.only-mobile) .td .td-con {
     width: 100%;
@@ -2097,7 +2111,7 @@ strong {
         -ms-flex-order: 7;
             order: 7;
   }
-  .full-table .rectangle-block-wrapper .rectangle-block.mode--commerce .table .tr:not(.only-mobile) .td:nth-child(12), .full-table .rectangle-block-wrapper .rectangle-block.mode--commerce .table .tr:not(.only-mobile) .td:nth-child(1), .full-table .rectangle-block-wrapper .rectangle-block.mode--commerce .table .tr:not(.only-mobile) .td:nth-child(3), .full-table .rectangle-block-wrapper .rectangle-block.mode--commerce .table .tr:not(.only-mobile) .td:nth-child(10), .full-table .rectangle-block-wrapper .rectangle-block.mode--commerce .table .tr:not(.only-mobile) .td:nth-child(13) {
+  .full-table .rectangle-block-wrapper .rectangle-block.mode--commerce .table .tr:not(.only-mobile) .td:nth-child(12), .full-table .rectangle-block-wrapper .rectangle-block.mode--commerce .table .tr:not(.only-mobile) .td:nth-child(1), .full-table .rectangle-block-wrapper .rectangle-block.mode--commerce .table .tr:not(.only-mobile) .td:nth-child(3), .full-table .rectangle-block-wrapper .rectangle-block.mode--commerce .table .tr:not(.only-mobile) .td:nth-child(10), .full-table .rectangle-block-wrapper .rectangle-block.mode--commerce .table .tr:not(.only-mobile) .td:nth-child(13), .full-table .rectangle-block-wrapper .rectangle-block.mode--commerce .table .tr:not(.only-mobile) .td:nth-child(14) {
     display: none;
   }
   .full-table .rectangle-block-wrapper .rectangle-block.mode--blogger .only-commerce {
@@ -2134,7 +2148,7 @@ strong {
   .full-table .rectangle-block-wrapper .rectangle-block.mode--blogger .table .tr:not(.only-mobile) .td:nth-child(11) {
     display: none;
   }
-  .full-table .rectangle-block-wrapper .rectangle-block.mode--blogger .table .tr:not(.only-mobile) .td:nth-child(12), .full-table .rectangle-block-wrapper .rectangle-block.mode--blogger .table .tr:not(.only-mobile) .td:nth-child(1), .full-table .rectangle-block-wrapper .rectangle-block.mode--blogger .table .tr:not(.only-mobile) .td:nth-child(3), .full-table .rectangle-block-wrapper .rectangle-block.mode--blogger .table .tr:not(.only-mobile) .td:nth-child(10), .full-table .rectangle-block-wrapper .rectangle-block.mode--blogger .table .tr:not(.only-mobile) .td:nth-child(13) {
+  .full-table .rectangle-block-wrapper .rectangle-block.mode--blogger .table .tr:not(.only-mobile) .td:nth-child(12), .full-table .rectangle-block-wrapper .rectangle-block.mode--blogger .table .tr:not(.only-mobile) .td:nth-child(1), .full-table .rectangle-block-wrapper .rectangle-block.mode--blogger .table .tr:not(.only-mobile) .td:nth-child(3), .full-table .rectangle-block-wrapper .rectangle-block.mode--blogger .table .tr:not(.only-mobile) .td:nth-child(10), .full-table .rectangle-block-wrapper .rectangle-block.mode--blogger .table .tr:not(.only-mobile) .td:nth-child(13), .full-table .rectangle-block-wrapper .rectangle-block.mode--blogger .table .tr:not(.only-mobile) .td:nth-child(14) {
     display: none;
   }
   .full-table .rectangle-block-wrapper .rectangle-block .pages .pages-wrapper {

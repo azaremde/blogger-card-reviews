@@ -181,6 +181,7 @@ select
         border-color: $primary-text
 
 
+
 .gray-text
     color: $secondary-text
 
@@ -361,6 +362,9 @@ select
     position: relative
     .select
         width: 100%
+        &:focus
+            option
+                color: $primary-text !important
     &::after
         content: ''
         border: 5px solid transparent

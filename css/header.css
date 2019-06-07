@@ -961,6 +961,10 @@ select {
   width: 100%;
 }
 
+.select-wrapper .select:focus option {
+  color: #192229 !important;
+}
+
 .select-wrapper::after {
   content: '';
   border: 5px solid transparent;

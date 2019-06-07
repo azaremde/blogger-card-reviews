@@ -26,11 +26,20 @@
                                     background-color: #fff
                                     color: $primary-text
                                     border: 1px solid $after-color-2
-            .mouseover-tooltip
+            .plus-tooltip
                 height: 44px
                 position: absolute
                 display: none
-                font-size: 14px !important
+                font-size: 14px
+                padding: 5px 10px
+                background-color: #F9D451
+                text-align: center
+                line-height: 32px
+                pointer-events: none
+            .mouseover-tooltip
+                position: absolute
+                display: none
+                font-size: 14px
                 padding: 5px 10px
                 background-color: $primary-text
                 color: white
@@ -262,26 +271,26 @@
                             width: 96px
                         &:nth-last-child(2)
                             width: 130px
-                        &:nth-last-child(3)
+                        &:nth-last-child(3), &:nth-last-child(4)
                             width: 128px
-                        &:nth-last-child(4)
-                            width: 110px
                         &:nth-last-child(5)
+                            width: 110px
+                        &:nth-last-child(6)
                             width: 82px
                             .td-con
                                 text-align: center
                                 justify-content: center
                                 i
                                     margin-left: 3px
-                        &:nth-last-child(6)
-                            width: 91px
                         &:nth-last-child(7)
-                            width: 83px
+                            width: 91px
                         &:nth-last-child(8)
-                            width: 114px
+                            width: 83px
                         &:nth-last-child(9)
+                            width: 114px
+                        &:nth-last-child(10)
                             width: 104px
-                        &:nth-last-child(10), &:nth-last-child(11)
+                        &:nth-last-child(11), &:nth-last-child(12)
                             min-width: 150px
                             .td-con
                                 overflow: hidden
@@ -289,9 +298,9 @@
                                     overflow: hidden
                                     white-space: pre
                                     text-overflow: ellipsis
-                        &:nth-last-child(12)
-                            width: 92px
                         &:nth-last-child(13)
+                            width: 92px
+                        &:nth-last-child(14)
                             width: 18px
         .show-more
             border-top: 1px solid $after-color-2
