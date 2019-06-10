@@ -900,10 +900,9 @@ select {
   border-radius: 50%;
   width: 35px;
   height: 35px;
-  -webkit-transform: translateY(120px);
-          transform: translateY(120px);
   position: absolute;
   left: 50%;
+  top: calc(50% + 5px);
 }
 
 .rate-row {
@@ -1683,6 +1682,18 @@ strong {
   .rectangle-block-wrapper .table:not(.blogger--loading) .loader {
     display: none;
   }
+  .rectangle-block-wrapper .table.blogger.blogger--loading {
+    position: relative;
+  }
+  .rectangle-block-wrapper .table.blogger.blogger--loading::before {
+    content: '-';
+    position: absolute;
+    top: 50%;
+    -webkit-transform: translateY(-50%);
+            transform: translateY(-50%);
+    padding-left: 5px;
+    pointer-events: none;
+  }
   .rectangle-block-wrapper .table.blogger.blogger--loading .blogger-review {
     display: none;
   }
@@ -1717,6 +1728,18 @@ strong {
     max-height: 0;
     overflow: hidden;
     position: absolute;
+  }
+  .rectangle-block-wrapper .table.blogger.blogger--open {
+    position: relative;
+  }
+  .rectangle-block-wrapper .table.blogger.blogger--open::before {
+    content: '-';
+    position: absolute;
+    top: 50%;
+    -webkit-transform: translateY(-50%);
+            transform: translateY(-50%);
+    padding-left: 5px;
+    pointer-events: none;
   }
   .rectangle-block-wrapper .table.blogger.blogger--open .blogger--original .tr .td {
     background-color: #FFFCE3;
