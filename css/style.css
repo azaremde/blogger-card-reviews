@@ -1633,7 +1633,7 @@ strong {
 
 .full-table .rectangle-block-wrapper .rectangle-block .pages .buttons__page--current {
   background-color: #3897F0;
-  border: 1px solid #3897F0;
+  border: 1px solid #3897F0 !important;
 }
 
 .full-table .rectangle-block-wrapper .rectangle-block .pages .buttons__page--current .buttons-text {
